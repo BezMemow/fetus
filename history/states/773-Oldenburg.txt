@@ -1,0 +1,19 @@
+state={
+	id=773
+	name="STATE_773"
+	provinces={
+		374 3271 3326 6325 6349 
+	}
+	history = {
+	owner = OLD
+	add_core_of = OLD
+	buildings = {
+		infrastructure = 5
+		arms_factory = 1
+		industrial_complex = 1
+	}
+	}
+	manpower=100000
+	state_category = city
+	buildings_max_level_factor=1.000
+}

@@ -1,0 +1,19 @@
+state={
+	id=774
+	name="STATE_774"
+	provinces={
+		11331 
+	}
+	history = {
+	owner = LUB
+	add_core_of = LUB
+	buildings = {
+		infrastructure = 8
+		arms_factory = 2
+		industrial_complex = 5
+	}
+	}
+	manpower=100000
+	state_category = city
+	buildings_max_level_factor=1.000
+}

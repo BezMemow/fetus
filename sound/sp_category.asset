@@ -1,0 +1,6 @@
+category = {
+ name = "German Speeches"
+ soundeffects = {
+	sp_prg_plc	
+ 	}
+}

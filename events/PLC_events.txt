@@ -1,0 +1,127 @@
+add_namespace = PLC
+
+##Event: Not one step back!
+country_event = {
+ id = PLC.1
+ title = PLC.1.title
+ desc = PLC.1.desc
+ picture = GFX_report_event_czech_soldiers_02
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = PLC.1.a
+		ai_chance = { factor = 40}
+		add_timed_idea = {
+		idea = PLC_war
+		days = 30
+}
+	}
+}
+
+##Event: Lithuanian forces
+country_event = {
+ id = PLC.2
+ title = PLC.2.title
+ desc = PLC.2.desc
+ picture = GFX_report_event_china_ledo_road
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = PLC.2.a
+		ai_chance = { factor = 40}
+	hidden_effect = {
+	random_owned_controlled_state = {
+	prioritize { 189 }
+				create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+				owner = PLC
+				}
+				
+				create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+				owner = PLC
+				}
+	}
+	random_owned_controlled_state = {
+	prioritize { 11 }
+				create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+				owner = PLC
+				}
+				
+				create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+				owner = PLC
+				}
+	}
+	random_owned_controlled_state = {
+	prioritize { 96 }
+				create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+				owner = PLC
+				}
+				
+				create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+				owner = PLC
+				}
+	}
+	}
+	}
+}
+
+##Event: Summer Defensive of 1938
+country_event = {
+ id = PLC.3
+ title = PLC.3.title
+ desc = PLC.3.desc
+ picture = GFX_report_event_nationalist_china_machinegun_firing
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = PLC.3.a
+		ai_chance = { factor = 1}
+	random_owned_controlled_state = {
+	prioritize { 92 }
+				create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+				owner = PLC
+				}
+				
+				create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+				owner = PLC
+				}
+	}
+	random_owned_controlled_state = {
+	prioritize { 10 }
+				create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+				owner = PLC
+				}
+				
+				create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+				owner = PLC
+				}
+	}
+	random_owned_controlled_state = {
+	prioritize { 90 }
+				create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+				owner = PLC
+				}
+				
+				create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+				owner = PLC
+				}
+	}
+	}
+}

@@ -1,0 +1,9 @@
+spriteTypes = { 
+##Icon For: 68232
+ SpriteType = { 
+ name = "GFX_polandlithuania" \r\n texturefile = "gfx/interface/goals/GFX_polandlithuania.tga" 
+ }##Icon For: 68288
+ SpriteType = { 
+ name = "GFX_cadensabdication" \r\n texturefile = "gfx/interface/goals/GFX_cadensabdication.tga" 
+ } 
+ }

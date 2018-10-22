@@ -1,0 +1,587 @@
+focus_tree = { 
+id = ASE
+country = { 
+factor = 0 
+modifier = { 
+add = 10 
+tag = ASE 
+} 
+} 
+#Focus for Greater Autonomy
+focus = { 
+id = ASE_greaterautonomy
+icon = GFX_goal_support_democracy
+x = 18
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_reapproachthesituation } 
+mutually_exclusive = { focus = ASE_maintaintheemperorspower } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+set_politics = {
+ruling_party = democratic
+elections_allowed = yes 
+}
+add_popularity = { 
+ideology = fascism 
+popularity = 0.1 
+}
+add_popularity = { 
+ideology = communist
+popularity = 0.2 
+}
+add_popularity = { 
+ideology = democracy
+popularity = 0.3 
+}
+add_popularity = { 
+ideology = neutrality 
+popularity = -0.1 
+}
+ } 
+
+ } 
+
+#Focus for Maintain the Emperor's power
+focus = { 
+id = ASE_maintaintheemperorspower
+icon = GFX_focus_rom_royal_dictatorship
+x = 20
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_reapproachthesituation } 
+mutually_exclusive = { focus = ASE_greaterautonomy } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_popularity = { 
+ideology = neutrality 
+popularity = 0.2 
+}
+add_stability = -0.2
+add_war_support = 0.1
+ASE = {
+country_event = {
+id = europacraftalis.7
+days = 1
+}
+}
+ } 
+
+ } 
+
+#Focus for Rifle advancments
+focus = { 
+id = ASE_rifleadvancments
+icon = GFX_goal_generic_axis_build_infantry
+x = 10
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_weaponsresearch } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+ bonus = 0.5 
+uses = 2 
+category = infantry_weapons
+}
+
+
+news_event = europacraftalis.37
+ } 
+
+ } 
+
+#Focus for Weapons research
+focus = { 
+id = ASE_weaponsresearch
+icon = GFX_goal_generic_build_tank
+x = 10
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_forcegreaterconscriptionlaws } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+ bonus = 1
+uses = 1 
+category = infantry_weapons 
+}
+ } 
+
+ } 
+
+#Focus for Civilian research
+focus = { 
+id = ASE_civilianresearch
+icon = GFX_goal_generic_production
+x = 12
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_focusonpeace } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+ bonus = 1 
+uses = 1 
+category = industry
+}
+ } 
+
+ } 
+
+#Focus for Artillery inventions
+focus = { 
+id = ASE_artilleryinventions
+icon = GFX_goal_generic_army_artillery2
+x = 11
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_increasedconscription } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+ bonus = 0.5 
+uses = 2 
+category = artillery  
+}
+ } 
+
+ } 
+
+#Focus for Force greater conscription laws
+focus = { 
+id = ASE_forcegreaterconscriptionlaws
+icon = GFX_focus_prc_infiltration
+x = 10
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_statepropaganda } 
+prerequisite = { focus = ASE_artilleryinventions } 
+prerequisite = { focus = ASE_prepareforwarwithprussia }  
+mutually_exclusive = { focus = ASE_focusonpeace } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = SOV_internacional_rec
+add_stability = -0.10
+ } 
+
+ } 
+
+#Focus for Oil industry increase
+focus = { 
+id = ASE_oilindustryincrease
+icon = GFX_goal_generic_oil_refinery
+x = 5
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_massiverearmment } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_resource= { 
+type = oil 
+amount = 16 
+state = 76 
+}
+ } 
+
+ } 
+
+#Focus for Prepare for war with prussia
+focus = { 
+id = ASE_prepareforwarwithprussia
+icon = GFX_goal_generic_fortify_city
+x = 13
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_increasedconscription } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+66 = {
+add_building_construction = { 
+type = bunker 
+province = 6595 
+level = 4 
+instant_build = yes }
+add_building_construction = { 
+type = bunker 
+province = 9470 
+level = 4 
+instant_build = yes }
+add_building_construction = { 
+type = bunker 
+province = 3438
+level = 4 
+instant_build = yes }
+}
+ } 
+
+ } 
+
+#Focus for State Propaganda
+focus = { 
+id = ASE_statepropaganda
+icon = GFX_focus_generic_support_the_left_right
+x = 9
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_increasedconscription } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_war_support = 0.1
+ } 
+
+ } 
+
+#Focus for Better factories conditions
+focus = { 
+id = ASE_betterfactoriesconditions
+icon = GFX_goal_generic_construct_civ_factory
+x = 1
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_interventionincivilianindustry } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_stability = 0.1
+4 = {
+add_building_construction = { 
+type = industrial_complex 
+level = 2 
+instant_build = yes }
+}
+4 = {
+ add_extra_state_shared_building_slots = 2 
+}
+ } 
+
+ } 
+
+#Focus for Mines Expansion
+focus = { 
+id = ASE_minesexpansion
+icon = GFX_goal_generic_construction2
+x = 3
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_interventionincivilianindustry } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_resource= { 
+type = steel
+amount = 8 
+state = 67 
+}
+ } 
+
+ } 
+
+#Focus for Increased conscription
+focus = { 
+id = ASE_increasedconscription
+icon = GFX_goal_generic_small_arms
+x = 11
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = SOV_international_rec
+add_stability = -0.05
+ } 
+
+ } 
+
+#Focus for Focus on peace
+focus = { 
+id = ASE_focusonpeace
+icon = GFX_goal_generic_neutrality_focus
+x = 12
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_prepareforwarwithprussia } 
+prerequisite = { focus = ASE_artilleryinventions } 
+prerequisite = { focus = ASE_statepropaganda } 
+mutually_exclusive = { focus = ASE_forcegreaterconscriptionlaws } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_stability = 0.1
+add_war_support = -0.1
+ } 
+
+ } 
+
+#Focus for Better roads conecting cities
+focus = { 
+id = ASE_betterroadsconectingcities
+icon = GFX_goal_generic_construct_infrastructure
+x = 3
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_minesexpansion } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+4 = {
+add_building_construction = { 
+type = infrastructure
+level = 2 
+instant_build = yes }
+}
+ } 
+
+ } 
+
+#Focus for Intervention in civilian industry
+focus = { 
+id = ASE_interventionincivilianindustry
+icon = GFX_goal_generic_consumer_goods
+x = 3
+y = 0
+cost = 10
+available_if_capitulated = yes 
+mutually_exclusive = { focus = ASE_interventioninmilitaryindustry } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = ASE_ukraine
+ } 
+
+ } 
+
+#Focus for Intervention in Military industry
+focus = { 
+id = ASE_interventioninmilitaryindustry
+icon = GFX_goal_generic_occupy_start_war
+x = 6
+y = 0
+cost = 10
+available_if_capitulated = yes 
+mutually_exclusive = { focus = ASE_interventionincivilianindustry } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_offsite_building = { type = arms_factory level = 2 }
+add_stability = -0.05
+ } 
+
+ } 
+
+#Focus for Reduced minorities freedoms
+focus = { 
+id = ASE_reducedminoritiesfreedoms
+icon = GFX_goal_generic_political_pressure
+x = 14
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_supportaustriannationalists } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_stability = -0.05
+add_popularity = { 
+ideology = fascism 
+popularity = 0.1 
+}
+add_popularity = { 
+ideology = communism 
+popularity = 0.2 
+}
+add_war_support = -0.05
+ } 
+
+ } 
+
+#Focus for Massive rearmment
+focus = { 
+id = ASE_massiverearmment
+icon = GFX_goal_generic_construct_mil_factory
+x = 6
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_interventioninmilitaryindustry } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+4 = {
+add_building_construction = { 
+type = arms_factory
+level = 2 
+instant_build = yes }
+}
+4 = {
+add_extra_state_shared_building_slots = 2 
+}
+add_stability = -0.1
+ } 
+
+ } 
+
+#Focus for Increased funding for research
+focus = { 
+id = ASE_increasedfundingforresearch
+icon = GFX_focus_research2
+x = 3
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_betterroadsconectingcities } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+ bonus = 0.5 
+uses = 1 
+category = construction_tech 
+}
+add_research_slot = 1
+ } 
+
+ } 
+
+#Focus for Support Austrian Nationalists
+focus = { 
+id = ASE_supportaustriannationalists
+icon = GFX_goal_support_fascism
+x = 15
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_politicalstruggle } 
+mutually_exclusive = { focus = ASE_reapproachthesituation } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_popularity = { 
+ideology = fascism 
+popularity = 0.2
+}
+add_stability = -0.1
+start_civil_war = {
+ideology = fascism
+size = 0.6
+}
+ } 
+
+ } 
+
+#Focus for Reapproach the situation
+focus = { 
+id = ASE_reapproachthesituation
+icon = GFX_goal_tripartite_pact
+x = 19
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_politicalstruggle } 
+mutually_exclusive = { focus = ASE_supportaustriannationalists } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_stability = -0.1
+add_war_support = -0.1
+add_popularity = { 
+ideology = neutrality
+popularity = 0.1 
+}
+ } 
+
+ } 
+
+#Focus for New Arsenals
+focus = { 
+id = ASE_newarsenals
+icon = GFX_goal_generic_build_tank
+x = 7
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ASE_massiverearmment } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+9 = {
+add_building_construction = {
+type = arms_factory
+level = 4
+instant_build = yes
+}
+}
+9 = {
+add_extra_state_shared_building_slots = 4
+}
+ } 
+
+ } 
+
+#Focus for Political Struggle
+focus = { 
+id = ASE_politicalstruggle
+icon = GFX_goal_generic_demand_territory
+x = 17
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_political_power = 120
+ } 
+
+ } 
+
+#End of focuses 
+ }

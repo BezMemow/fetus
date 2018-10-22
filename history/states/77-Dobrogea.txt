@@ -1,0 +1,22 @@
+
+state={
+	id=77
+	name="STATE_77"
+	manpower = 378000
+	
+	state_category = rural
+
+	history={
+		owner = OTE
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 2
+		}
+		add_core_of = OTE
+		add_core_of = BUL
+	}
+
+	provinces={
+		9614 11597 
+	}
+}

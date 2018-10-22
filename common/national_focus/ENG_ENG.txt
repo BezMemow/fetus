@@ -1,0 +1,607 @@
+focus_tree = { 
+id = ENG
+country = { 
+factor = 0 
+modifier = { 
+add = 10 
+tag = ENG 
+} 
+} 
+#Focus for Colonisation of Africa
+focus = { 
+id = ENG_colonisationofafrica
+icon = GFX_goal_tfv_saf_secure_interests_in_africa
+x = 8
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_whotrulyrulesthewaves } 
+prerequisite = { focus = ENG_australianzoos } 
+ai_will_do = { 
+ factor = 40
+ } 
+available = { 
+date > 1941.1.1
+ } 
+completion_reward = { 
+add_timed_idea = { 
+idea = ENG_conquest
+days = 365
+}
+ } 
+
+ } 
+
+#Focus for European Colonies
+focus = { 
+id = ENG_europeancolonies
+icon = GFX_focus_generic_support_the_left_right
+x = 6
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_colonialplay } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_war_support = 0.05
+add_stability = 0.05
+ } 
+
+ } 
+
+#Focus for Help Savoy
+focus = { 
+id = ENG_helpsavoy
+icon = GFX_goal_generic_small_arms
+x = 4
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_prepareforwarwithfrance focus = ENG_europeancolonies } 
+ai_will_do = { 
+ factor = 40
+ } 
+available = { 
+SAV = {
+has_war_with = TUS
+}
+ } 
+completion_reward = { 
+send_equipment = {
+target = SAV
+type = infantry_equipment 
+amount = 6000 
+}
+ } 
+
+ } 
+
+#Focus for Australian zoos
+focus = { 
+id = ENG_australianzoos
+icon = GFX_focus_AST_rats_tobruk
+x = 10
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_unlikelyally } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_ideas = ENG_zoo
+ } 
+
+ } 
+
+#Focus for Who truly rules the waves
+focus = { 
+id = ENG_whotrulyrulesthewaves
+icon = GFX_focus_eng_danish
+x = 6
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_maltaoccupation } 
+ai_will_do = { 
+ factor = 40
+ } 
+bypass = { 
+NOT = { DEN = { exists = yes } }
+ } 
+available = { 
+date > 1938.1.1
+ } 
+completion_reward = { 
+create_wargoal = {
+type = annex_everything
+target = DEN
+}
+ } 
+
+ } 
+
+#Focus for Malta Occupation
+focus = { 
+id = ENG_maltaoccupation
+icon = GFX_focus_malta
+x = 6
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_gibraltaroccupation } 
+ai_will_do = { 
+ factor = 40
+ } 
+bypass = { 
+ENG = { owns_state = 116 }
+ } 
+available = { 
+PAP = { owns_state = 116 }
+ } 
+completion_reward = { 
+PAP = {
+country_event = {
+days = 1
+id = europacraftalis.43
+}
+}
+ } 
+
+ } 
+
+#Focus for Gibraltar Occupation
+focus = { 
+id = ENG_gibraltaroccupation
+icon = GFX_focus_generic_little_entente
+x = 6
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_europeancolonies } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+SPR = {
+country_event = {
+days = 1
+id = europacraftalis.41
+}
+}
+ } 
+
+ } 
+
+#Focus for Unlikely ally
+focus = { 
+id = ENG_unlikelyally
+icon = GFX_focus_chi_reach_out_to_france
+x = 10
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_destroyjapaneseinfluence } 
+prerequisite = { focus = ENG_malayaconquest } 
+ai_will_do = { 
+ factor = 4000
+ } 
+available = { 
+GER = { exists = yes }
+date > 1940.1.1
+ } 
+completion_reward = { 
+FRA = {
+country_event = {
+days = 1
+id = europacraftalis.40
+}
+}
+ } 
+
+ } 
+
+#Focus for Destroy Japanese influence
+focus = { 
+id = ENG_destroyjapaneseinfluence
+icon = GFX_focus_AST_war_japan
+x = 11
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_asiangambit } 
+ai_will_do = { 
+ factor = 40
+ } 
+available = { 
+JAP = { exists = yes }
+ } 
+completion_reward = { 
+create_wargoal = { 
+type = annex_everything 
+target = JAP
+}
+} 
+
+ } 
+
+#Focus for Malaya Conquest
+focus = { 
+id = ENG_malayaconquest
+icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+x = 9
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_asiangambit } 
+ai_will_do = { 
+ factor = 40
+ } 
+available = { 
+MAL = { exists = yes }
+ } 
+completion_reward = { 
+create_wargoal = { 
+type = annex_everything 
+target = MAL
+}
+ } 
+
+ } 
+
+#Focus for Asian Gambit
+focus = { 
+id = ENG_asiangambit
+icon = GFX_focus_RAJ_british_investors
+x = 10
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_colonialplay } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_timed_idea = {
+idea = ENG_conquest
+days = 100
+}
+ } 
+
+ } 
+
+#Focus for Seven years war
+focus = { 
+id = ENG_sevenyearswar
+icon = GFX_focus_AST_never_gallipoli
+x = 2
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_finalwarplanning } 
+ai_will_do = { 
+ factor = 4000
+ } 
+available = { 
+date > 1939.1.1
+ } 
+completion_reward = { 
+create_wargoal = { 
+type = annex_everything 
+target = FRA
+}
+add_timed_idea = {
+idea = ENG_destiny
+days = 150
+}
+ } 
+
+ } 
+
+#Focus for Final war planning
+focus = { 
+id = ENG_finalwarplanning
+icon = GFX_goal_generic_position_armies
+x = 2
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_temporaryally } 
+ai_will_do = { 
+ factor = 4000
+ } 
+available = { 
+FRA = { exists = yes }
+ } 
+completion_reward = { 
+add_tech_bonus = {
+bonus = 1 
+uses = 1
+category = land_doctrine
+}
+ } 
+
+ } 
+
+#Focus for Enforce taxes
+focus = { 
+id = ENG_enforcetaxes
+icon = GFX_goal_generic_consumer_goods
+x = 1
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_proxywars } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+COL = {
+add_timed_idea = {
+idea = americas.2
+days = 365
+}
+}
+add_timed_idea = {
+idea = ENG_taxes
+days = 365
+}
+ } 
+
+ } 
+
+#Focus for Prepare for war with France
+focus = { 
+id = ENG_prepareforwarwithfrance
+icon = GFX_focus_generic_commonwealth_build_infantry
+x = 3
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_proxywars } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_tech_bonus = {
+bonus = 0.5 
+uses = 1 
+category = infantry_weapons
+}
+army_experience= 20
+navy_experience = 100
+ } 
+
+ } 
+
+#Focus for Temporary Ally
+focus = { 
+id = ENG_temporaryally
+icon = GFX_focus_chi_mission_to_germany
+x = 2
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_enforcetaxes } 
+prerequisite = { focus = ENG_prepareforwarwithfrance } 
+ai_will_do = { 
+ factor = 40
+ } 
+available = { 
+PRG = { exists = yes }
+ } 
+completion_reward = { 
+PRG = {
+country_event = {
+days = 1
+id = europacraftalis.39
+}
+}
+ } 
+
+ } 
+
+#Focus for Proxy wars
+focus = { 
+id = ENG_proxywars
+icon = GFX_focus_generic_iroquois
+x = 2
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_colonialplay } 
+ai_will_do = { 
+ factor = 40
+ } 
+available = { 
+date > 1938.5.1
+ } 
+completion_reward = { 
+IRQ = {
+country_event = {
+days = 1
+id = americas.1
+}
+}
+CSS = {
+country_event = {
+days = 1
+id = americas.1
+}
+}
+} 
+
+ } 
+
+#Focus for Colonial Play
+focus = { 
+id = ENG_colonialplay
+icon = GFX_focus_generic_home_defense
+x = 6
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 40
+ } 
+available = { 
+date > 1938.1.1
+ } 
+completion_reward = { 
+126 = {
+add_building_construction = { 
+type = arms_factory
+level = 2 
+instant_build = yes }
+}
+127 = {
+add_building_construction = { 
+type = arms_factory
+level = 2 
+instant_build = yes }
+}
+ } 
+
+ } 
+
+#Focus for Battle of the English Channel
+focus = { 
+id = ENG_battleoftheenglishchannel
+icon = GFX_focus_ger_break_anglo_french_colonial_hegemony
+x = 14
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_warwithfrance } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+ENG = {
+has_war_with = FRA
+}
+ } 
+completion_reward = { 
+add_timed_idea = { 
+idea = ENG_english_channel
+days = 150 
+}
+ } 
+
+ } 
+
+#Focus for War with France
+focus = { 
+id = ENG_warwithfrance
+icon = GFX_focus_generic_military_mission
+x = 14
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+ENG = {
+has_war_with = FRA
+}
+date > 1939.1.1
+ } 
+completion_reward = { 
+add_timed_idea = { 
+idea = ENG_attack
+days = 150 
+}
+ } 
+
+ } 
+
+#Focus for Around France
+focus = { 
+id = ENG_aroundfrance
+icon = GFX_britain_netherlandsdds
+x = 14
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_battleoftheenglishchannel } 
+ai_will_do = { 
+ factor = 4000
+ } 
+available = { 
+HOL = { exists = yes }
+BEL = { exists = yes }
+ } 
+completion_reward = { 
+create_wargoal = { 
+type = annex_everything 
+target = HOL
+}
+create_wargoal = { 
+type = annex_everything 
+target = BEL
+}
+ } 
+
+ } 
+
+#Focus for War of American Liberation
+focus = { 
+id = ENG_warofamericanliberation
+icon = GFX_future_americas
+x = 14
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_aroundfrance } 
+ai_will_do = { 
+ factor = 4000
+ } 
+completion_reward = { 
+add_timed_idea = { 
+idea = ENG_american 
+days = 365
+}
+add_timed_idea = { 
+idea = ENG_debts
+days = 365 
+}
+ } 
+
+ } 
+
+#Focus for Tax the Americas
+focus = { 
+id = ENG_taxtheamericas
+icon = GFX_debts
+x = 14
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ENG_warofamericanliberation } 
+ai_will_do = { 
+ factor = 40
+ } 
+available = { 
+USA = { exists = yes }
+NOT = { ENG = { has_war_with = FRA } }
+ } 
+completion_reward = { 
+USA = {
+add_timed_idea = { 
+idea = ENG_debts
+days = 365
+}
+}
+add_timed_idea = { 
+idea = ENG_taxes
+days = 365
+}
+ } 
+
+ } 
+
+#End of focuses 
+ }

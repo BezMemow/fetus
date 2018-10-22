@@ -1,0 +1,19 @@
+state={
+	id=772
+	name="STATE_772"
+	provinces={
+		519 3530 6555 6568 6581 9517 11486 11499 
+	}
+	history = {
+	owner = WUR
+	add_core_of = WUR
+	buildings = {
+		infrastructure = 2
+		arms_factory = 2
+		industrial_complex = 2
+	}
+	}
+	manpower=100000
+	state_category = city
+	buildings_max_level_factor=1.000
+}

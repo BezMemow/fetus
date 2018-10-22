@@ -1,0 +1,19 @@
+state={
+	id=767
+	name="STATE_767"
+	provinces={
+		243 279 3295 6347 
+	}
+	history = {
+	owner = PLC
+	add_core_of = PLC
+	buildings = {
+		infrastructure = 3
+		arms_factory = 1
+		industrial_complex = 1
+	}
+	}
+	manpower=100000
+	state_category = rural
+	buildings_max_level_factor=1.000
+}

@@ -1,0 +1,27 @@
+
+add_namespace = music
+
+
+## Prussian declaration of war
+country_event = {
+    id = music.1
+    title = music.1.t
+    desc = music.1.d
+
+    fire_only_once = yes
+    mean_time_to_happen = { days = 1 }
+
+    trigger = {
+        tag = PRG
+        has_war_with = PLC
+        NOT = { has_global_flag = prussian_war }
+    }
+
+    option = {
+        name = music.1.a
+		hidden_effect = {
+        sound_effect = sp_prg_plc
+		}
+        set_global_flag = prussian_war
+    }
+}

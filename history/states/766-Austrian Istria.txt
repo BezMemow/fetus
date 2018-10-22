@@ -1,0 +1,18 @@
+state={
+	id=766
+	name="STATE_766"
+	provinces={
+		599 6626 11595 
+	}
+	history = {
+	owner = ASE
+	add_core_of = ASE
+	buildings = {
+		infrastructure = 1
+		industrial_complex = 1
+	}
+	}
+	add_manpower = 10000
+	state_category = city
+	buildings_max_level_factor=1.000
+}

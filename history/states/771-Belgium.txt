@@ -1,0 +1,19 @@
+state={
+	id=771
+	name="STATE_771"
+	provinces={
+		516 3488 3516 6537 9536 11519 
+	}
+	history = {
+	owner = HRE
+	add_core_of = HRE
+	buildings = {
+		infrastructure = 3
+		arms_factory = 1
+		industrial_complex = 2
+	}
+	}
+	manpower=1000000
+	state_category = rural
+	buildings_max_level_factor=1.000
+}

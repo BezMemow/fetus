@@ -1,0 +1,668 @@
+ideas = {
+
+	country = {
+
+		PLC_war = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = idea_generic_acquire_tanks
+
+			targeted_modifier = {
+				tag = PRG
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+
+		}
+		
+		SOV_international_rec = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_ger_volkssturm
+			
+			modifier = {
+				conscription = 0.03
+			}
+		}
+
+		SOV_poor_training = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_chi_army_corruption3
+			
+			modifier = {
+				army_org_factor = -0.15
+				army_attack_factor = -0.05
+				army_defence_factor = -0.05
+			}
+		}
+
+		PLC_construction = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_production_bonus
+			
+			modifier = {
+				production_speed_buildings_factor = 0.15
+			}
+		}
+		
+		PLC_ukraine = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_goods_red_bonus
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+		}
+		
+		PLC_debt = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_chi_hyper_inflation3
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+			}
+		}
+		
+		PLC_mrshelo = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_exploit_mines
+			
+			modifier = {
+				consumer_goods_factor = 0.01
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		
+		PLC_sirhc = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_jap_supremacy_of_will.png
+			
+			modifier = {
+				consumer_goods_factor = -0.01
+				research_time_factor = -0.05
+			}
+		}
+		
+		PLC_ruthenia = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_manpower_bonus
+			
+			modifier = {
+				conscription = 0.02
+			}
+		}
+		
+		PLC_hussars = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_ast_volunteer_defence_corps
+			
+			modifier = {
+				cavalry_attack_factor = 0.3
+				cavalry_defence_factor = 0.05
+			}
+		}
+		
+		SOV_carbines = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_hun_secret_rearmament
+			
+			modifier = {
+				army_attack_factor = 0.03
+				army_defence_factor = -0.03
+			}
+		}
+		
+		PLC_saber = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_generic_purge
+			
+			modifier = {
+				army_attack_factor = 0.02
+				army_defence_factor = 0.01
+			}
+		}
+		
+		PLC_horse = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_prc_the_long_march2
+			
+			modifier = {
+				army_speed_factor = 0.05
+			}
+		}
+		
+		PLC_last_stand = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_chi_army_corruption3
+			
+			modifier = {
+				army_attack_factor = 0.2
+				army_defence_factor = 0.2
+				conscription = 0.03
+				army_org_factor = 0.05
+				army_core_defence_factor = 0.2
+				army_core_attack_factor = 0.2
+			}
+		}
+		
+		PLC_payback = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = idea_chi_war_of_resistance3
+
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+
+		}
+		
+		PRG_organisation = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = general_staff
+			
+			modifier = {
+				army_org_factor = 0.1
+			}
+		}
+		
+		PRG_atakcipa = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_intel_bonus
+			
+			modifier = {
+				army_core_defence_factor = 0.1
+				army_core_attack_factor = 0.1
+			}
+		}
+		
+		PRG_conscription = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_manpower_bonus
+			
+			modifier = {
+				conscription = 0.005
+			}
+		}
+		
+		PRG_communism = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_communism_drift_bonus
+			
+			modifier = {
+				communism_drift = 0.10
+			}
+		}
+		
+		PRG_polishoffensive = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_generic_acquire_tanks
+			
+			targeted_modifier = {
+				tag = PLC
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+		}
+		
+		PLC_fight_for_poland = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_chi_war_of_resistance2
+			
+			modifier = {
+				army_org_factor = 0.05
+				army_core_defence_factor = 0.1
+				army_core_attack_factor = 0.1
+			}
+		}
+		
+		PLC_janik = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_generic_foreign_capital
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		ENG_taxes = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_generic_foreign_capital
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		ENG_destiny = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_generic_reserve_divisions
+			
+			targeted_modifier = {
+				tag = FRA
+				attack_bonus_against = 0.2
+				defense_bonus_against = 0.2
+			}
+		}
+		
+		ENG_attack = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_chi_war_of_resistance2
+			
+			targeted_modifier = {
+				tag = FRA
+				attack_bonus_against = 0.2
+				defense_bonus_against = 0.2
+			}
+		}
+		
+		ENG_conquest = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_winterdefensive
+			
+			modifier = {
+				justify_war_goal_time = -0.25
+				generate_wargoal_tension = -0.4
+				army_org = 2
+			}
+		}
+		
+		ENG_zoo = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = SOV_scientist_defect
+			
+			modifier = {
+				consumer_goods_factor = -0.02
+			}
+		}
+		
+		ENG_english_channel = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = Idea_generic_coastal_defense_ships2
+			
+			modifier = {
+				navy_capital_ship_attack_factor = 0.5
+				ai_focus_aggressive_factor = 0.5
+			}
+		}
+		
+		ENG_debts = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_chi_hyper_inflation4
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+			}
+		}
+		
+		PLC_winterdefensive = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_winterdefensive
+			
+			modifier = {
+				army_core_defence_factor = 1
+				land_reinforce_rate = 0.3
+				winter_attrition_factor = -1
+			}
+		}
+		
+		PLC_training = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_manpower_bonus
+			
+			modifier = {
+				training_time_army_factor = -0.1
+			}
+		}
+		
+		PLC_rebuild = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_manpower_bonus
+			
+			modifier = {
+				industry_repair_factor = 0.5
+			}
+		}
+		
+		PLC_build_war = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_generic_fortify_the_borders
+			
+			modifier = {
+				production_speed_bunker_factor = 0.2
+			}
+		}
+		
+		PLC_settle = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_prc_low_popular_support3
+			
+			modifier = {
+				MONTHLY_POPULATION = 0.1
+			}
+		}
+		
+		PLC_reward = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_generic_foreign_capital
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+	
+	}
+}

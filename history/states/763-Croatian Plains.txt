@@ -1,0 +1,23 @@
+
+state={
+	id=763
+	name="STATE_763"
+
+	history={
+		owner = OTE
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 1
+
+		}
+		add_core_of = OTE
+
+	}
+
+	provinces={
+		619 3623 6647 9608 11577 
+	}
+	manpower=10000
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

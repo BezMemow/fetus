@@ -1,0 +1,8 @@
+#################
+#Prussian Speeches#
+#################
+
+sound = {
+	name = "sp_prg_plc"
+	file = "prg_speech/sp_prg_plc.wav"
+}

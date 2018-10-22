@@ -1,0 +1,1591 @@
+focus_tree = { 
+id = PRG
+country = { 
+factor = 0 
+modifier = { 
+add = 10 
+tag = PRG 
+} 
+} 
+#Focus for Limit free speech
+focus = { 
+id = PRG_limitfreespeech
+icon = GFX_goal_generic_propaganda
+x = 16
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_newconstitution } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_stability = -0.1
+add_popularity = { 
+ideology = fascism 
+popularity = -0.1 
+}
+add_popularity = { 
+ideology = democratic
+popularity = -0.1 
+}
+add_popularity = { 
+ideology = neutrality
+popularity = 0.1 
+}
+ } 
+
+ } 
+
+#Focus for Purge the monarchist faction
+focus = { 
+id = PRG_purgethemonarchistfaction
+icon = GFX_focus_generic_anti_fascist_diplomacy
+x = 20
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_dealwithimprisonedmonarch } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_popularity = { 
+ideology = neutrality 
+popularity = -0.2 
+}add_stability = -0.05
+ } 
+
+ } 
+
+#Focus for Further research of naval doctrines
+focus = { 
+id = PRG_furtherresearchofnavaldoctrines
+icon = GFX_goal_generic_navy_doctrines_tactics
+x = 27
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_navaldoctrine } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Silesian conquest
+focus = { 
+id = PRG_silesianconquest
+icon = GFX_focus_proclaim_the_restauration_of_Austria_Hungary
+x = 9
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_demanddanzig focus = PRG_kriegserklrunganpolenlitauen } 
+ai_will_do = { 
+ factor = 40
+ } 
+bypass = { 
+NOT = { ASE = { exists = yes } }
+ } 
+completion_reward = { 
+ASE = {
+country_event = {
+days = 10 
+id = europacraftalis.17
+}
+}
+ } 
+
+ } 
+
+#Focus for Land for alliance
+focus = { 
+id = PRG_landforalliance
+icon = GFX_focus_generic_polish_deal
+x = 15
+y = 4
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_newbetterprussia } 
+ai_will_do = { 
+ factor = 40
+ } 
+bypass = { 
+85 = { is_owned_by = PRG }
+ } 
+completion_reward = { 
+PLC = {
+country_event = {
+days = 8 
+id = europacraftalis.23
+}
+}
+ } 
+
+ } 
+
+#Focus for New Constitution
+focus = { 
+id = PRG_newconstitution
+icon = GFX_goal_generic_forceful_treaty
+x = 16
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_dealwithpoliticalenemies } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_popularity = { 
+ideology = communism
+popularity = 0.1
+}
+add_stability = 0.10
+ } 
+
+ } 
+
+#Focus for Military Accademy
+focus = { 
+id = PRG_militaryaccademy
+icon = GFX_focus_research2
+x = 7
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_prussianglory } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_research_slot = 1
+ } 
+
+ } 
+
+#Focus for Massive army draft
+focus = { 
+id = PRG_massivearmydraft
+icon = GFX_focus_generic_military_academy
+x = 10
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_wielkopolskaconquest } 
+prerequisite = { focus = PRG_glorytotheprussianstate } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = PRG_conscription
+ } 
+
+ } 
+
+#Focus for Glory to the Prussian state
+focus = { 
+id = PRG_glorytotheprussianstate
+icon = GFX_goal_generic_demand_territory
+x = 8
+y = 6
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_silesianconquest } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_war_support = 0.2
+ } 
+
+ } 
+
+#Focus for Keep Monarch in house arrest
+focus = { 
+id = PRG_keepmonarchinhousearrest
+icon = GFX_focus_rom_handle_king
+x = 25
+y = 5
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_governmentforthepeople } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_stability = 0.05
+add_war_support = 0.05
+ } 
+
+ } 
+
+#Focus for People's industry
+focus = { 
+id = PRG_peoplesindustry
+icon = GFX_goal_generic_soviet_construction
+x = 21
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_governmentforthepeople } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+59 = {
+add_building_construction = { 
+type = industrial_complex
+level = 4 
+instant_build = yes }
+add_building_construction = { 
+type = arms_factory
+level = 4 
+instant_build = yes }
+}
+59 = {
+add_extra_state_shared_building_slots = 8 }
+ } 
+
+ } 
+
+#Focus for Worldwide revolution
+focus = { 
+id = PRG_worldwiderevolution
+icon = GFX_focus_chi_cooperation_with_the_communists
+x = 23
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_spreadthewordofsalvation } 
+prerequisite = { focus = PRG_peoplesscience } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+create_faction= "Revolution"
+add_war_support = 0.5
+create_wargoal = {
+type = annex_everything
+target = PLC
+}
+create_wargoal = {
+type = annex_everything
+target = ASE
+}
+create_wargoal = {
+type = annex_everything
+target = SOV
+}
+ } 
+
+ } 
+
+#Focus for Great Infantry
+focus = { 
+id = PRG_greatinfantry
+icon = GFX_focus_chi_army_reform
+x = 5
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_prussianglory } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+ bonus = 1 
+uses = 2 
+category = infantry_weapons 
+}
+add_war_support = 0.1
+ } 
+
+ } 
+
+#Focus for Further improving railway network
+focus = { 
+id = PRG_furtherimprovingrailwaynetwork
+icon = GFX_goal_generic_construct_civilian
+x = 2
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_exploitationsofironmines } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+random_owned_state = {
+add_building_construction = { 
+type = infrastructure  
+level = 3
+instant_build = yes }
+add_building_construction = { 
+type = infrastructure  
+level = 3
+instant_build = yes }
+add_building_construction = { 
+type = infrastructure  
+level = 3
+instant_build = yes }
+ }
+ } 
+
+ } 
+
+#Focus for Demand Danzig
+focus = { 
+id = PRG_demanddanzig
+icon = GFX_focus_renounce_the_treaty_of_trianon
+x = 9
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_preparetofightwithpoland } 
+will_lead_to_war_with = PLC
+ai_will_do = { 
+ factor = 40
+ } 
+bypass = { 
+PRG = { owns_state = 85 }
+ } 
+completion_reward = { 
+PLC = {
+country_event = {
+days = 10 
+id = europacraftalis.12
+}
+}
+ } 
+
+ } 
+
+#Focus for Kriegserklärung an Polen Litauen
+focus = { 
+id = PRG_kriegserklrunganpolenlitauen
+icon = GFX_focus_generic_provoke_border_clashes
+x = 11
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_preparetofightwithpoland } 
+mutually_exclusive = { focus = PRG_demanddanzig }
+will_lead_to_war_with = PLC 
+ai_will_do = { 
+ factor = 40
+ } 
+bypass = { 
+has_war_with = PLC
+ } 
+available = { 
+PLC = { exists = yes }
+ } 
+completion_reward = { 
+create_wargoal = { 
+type = annex_everything 
+target = PLC
+}
+ } 
+
+ } 
+
+#Focus for Deal with political enemies
+focus = { 
+id = PRG_dealwithpoliticalenemies
+icon = GFX_focus_CZE_german_puppet
+x = 18
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_dictatorseizescontrol } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_popularity = { 
+ideology = communism
+popularity = 0.08
+}
+add_stability = -0.15
+ } 
+
+ } 
+
+#Focus for Spread the word of salvation
+focus = { 
+id = PRG_spreadthewordofsalvation
+icon = GFX_focus_generic_soviet_politics
+x = 22
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_politicalamnesty } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+PLC = {
+add_ideas = PRG_communism}
+ASE = {
+add_ideas = PRG_communism}
+ } 
+
+ } 
+
+#Focus for Fair Constitution
+focus = { 
+id = PRG_fairconstitution
+icon = GFX_focus_generic_self_management
+x = 17
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_expandcivilianindustry } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_stability = 0.3
+add_war_support = 0.2
+ } 
+
+ } 
+
+#Focus for Expand civilian industry
+focus = { 
+id = PRG_expandcivilianindustry
+icon = GFX_goal_generic_construction2
+x = 17
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_constitutionalmonarchy } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+64 = {
+add_building_construction = { 
+type = industrial_complex
+level = 2 
+instant_build = yes }
+}
+64 = {
+add_extra_state_shared_building_slots = 2
+}
+ } 
+
+ } 
+
+#Focus for Political Amnesty
+focus = { 
+id = PRG_politicalamnesty
+icon = GFX_goal_generic_dangerous_deal
+x = 23
+y = 5
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_governmentforthepeople } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_stability = 0.10
+ } 
+
+ } 
+
+#Focus for People's Science
+focus = { 
+id = PRG_peoplesscience
+icon = GFX_focus_generic_socialist_science
+x = 24
+y = 6
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_politicalamnesty } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_stability = 0.05
+add_research_slot = 1
+ } 
+
+ } 
+
+#Focus for Wielkopolska conquest
+focus = { 
+id = PRG_wielkopolskaconquest
+icon = GFX_goal_generic_attack_allies
+x = 10
+y = 6
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_silesianconquest } 
+will_lead_to_war_with = PLC
+ai_will_do = { 
+ factor = 40
+ } 
+bypass = { 
+89 = { is_owned_by = PRG }
+ } 
+completion_reward = { 
+PLC = {
+country_event = {
+days = 10 
+id = europacraftalis.20
+}
+}
+ } 
+
+ } 
+
+#Focus for Further research of infantry weapons
+focus = { 
+id = PRG_furtherresearchofinfantryweapons
+icon = GFX_goal_generic_axis_build_infantry
+x = 7
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_armyexpansion } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+ bonus = 0.8 
+uses = 1
+category = infantry_weapons
+}
+ } 
+
+ } 
+
+#Focus for Increased conscription
+focus = { 
+id = PRG_increasedconscription
+icon = GFX_focus_prc_infiltration
+x = 5
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_armyexpansion } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_ideas = SOV_international_rec
+ } 
+
+ } 
+
+#Focus for Invade danzig
+focus = { 
+id = PRG_invadedanzig
+icon = GFX_focus_generic_provoke_border_clashes
+x = 18
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_aggresiveforeignpolitics } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+create_wargoal = { 
+type = annex_everything 
+target = PLC
+}
+ } 
+
+ } 
+
+#Focus for Prepare to fight with Poland
+focus = { 
+id = PRG_preparetofightwithpoland
+icon = GFX_focus_ger_oppose_hitler
+x = 10
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_absolutemonarchy } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_state_claim = 85
+add_war_support = 0.1
+add_tech_bonus = {
+ bonus = 1 
+uses = 1 
+category = infantry_weapons
+}
+ } 
+
+ } 
+
+#Focus for Crack down on opponents
+focus = { 
+id = PRG_crackdownonopponents
+icon = GFX_focus_CZE_german_puppet
+x = 13
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_absolutemonarchy } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_stability = -0.1
+add_popularity = { 
+ideology = neutrality 
+popularity = 0.2
+}
+ } 
+
+ } 
+
+#Focus for New better Prussia
+focus = { 
+id = PRG_newbetterprussia
+icon = GFX_focus_generic_the_giant_wakes
+x = 15
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_constitutionalmonarchy } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_stability = 0.2 
+add_war_support = -0.2
+ } 
+
+ } 
+
+#Focus for Aggresive foreign politics
+focus = { 
+id = PRG_aggresiveforeignpolitics
+icon = GFX_focus_ger_great_red_menace
+x = 18
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_dealwithpoliticalenemies } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_state_claim = 67
+add_state_claim = 66
+add_state_claim = 85
+ } 
+
+ } 
+
+#Focus for People's congress
+focus = { 
+id = PRG_peoplescongress
+icon = GFX_focus_prc_agrarian_socialism
+x = 21
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_abolishthemonarch } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_ideas = PRG_communism
+ } 
+
+ } 
+
+#Focus for Deal with imprisoned Monarch
+focus = { 
+id = PRG_dealwithimprisonedmonarch
+icon = GFX_focus_hun_assassinate_horthy
+x = 20
+y = 6
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_dealwithpoliticalenemies } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_country_leader_trait = warmonger
+add_war_support = 0.05
+ } 
+
+ } 
+
+#Focus for Political Sphere
+focus = { 
+id = PRG_politicalsphere
+icon = GFX_goal_tripartite_pact
+x = 16
+y = 0
+cost = 5
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_political_power = 120
+ } 
+
+ } 
+
+#Focus for Strong prussian politics
+focus = { 
+id = PRG_strongprussianpolitics
+icon = GFX_focus_ger_revive_kaiserreich
+x = 16
+y = 1
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_politicalsphere } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_stability = 0.10
+add_political_power = 70
+ } 
+
+ } 
+
+#Focus for Absolute Monarchy
+focus = { 
+id = PRG_absolutemonarchy
+icon = GFX_focus_ger_return_of_the_kaiser
+x = 12
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_strongprussianpolitics } 
+mutually_exclusive = { focus = PRG_constitutionalmonarchy } 
+mutually_exclusive = { focus = PRG_abolishthemonarch } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+set_politics = {
+ ruling_party = neutrality
+elections_allowed = no 
+}
+ } 
+
+ } 
+
+#Focus for Constitutional Monarchy
+focus = { 
+id = PRG_constitutionalmonarchy
+icon = GFX_goal_support_democracy
+x = 16
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_strongprussianpolitics } 
+mutually_exclusive = { focus = PRG_absolutemonarchy } 
+mutually_exclusive = { focus = PRG_abolishthemonarch } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+set_politics = {
+ ruling_party = democratic 
+elections_allowed = yes 
+}
+add_popularity = { 
+ideology = democratic 
+popularity = 0.5 
+}
+ } 
+
+ } 
+
+#Focus for Abolish the monarch
+focus = { 
+id = PRG_abolishthemonarch
+icon = GFX_goal_tfv_burn_the_royal_portraits
+x = 21
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_strongprussianpolitics } 
+mutually_exclusive = { focus = PRG_absolutemonarchy } 
+mutually_exclusive = { focus = PRG_constitutionalmonarchy } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+set_politics = {
+ruling_party = communism
+elections_allowed = no
+}
+add_popularity = {
+ideology = communism
+popularity = 0.1
+}
+retire_country_leader = yes
+ } 
+
+ } 
+
+#Focus for Prussian Discipline
+focus = { 
+id = PRG_prussiandiscipline
+icon = GFX_goal_generic_defence
+x = 9
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_landdoctrineadvancments } 
+mutually_exclusive = { focus = PRG_prussianartillery } 
+mutually_exclusive = { focus = PRG_newofficersexpandedtraining } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = PRG_organisation
+ } 
+
+ } 
+
+#Focus for Prussian glory
+focus = { 
+id = PRG_prussianglory
+icon = GFX_focus_generic_little_entente
+x = 7
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_prussianartillery focus = PRG_newofficersexpandedtraining focus = PRG_prussiandiscipline } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_ideas = PRG_conscription
+army_experience= 15
+ } 
+
+ } 
+
+#Focus for New officers expanded training
+focus = { 
+id = PRG_newofficersexpandedtraining
+icon = GFX_focus_generic_military_mission
+x = 5
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_increasedconscription } 
+mutually_exclusive = { focus = PRG_prussianartillery } 
+mutually_exclusive = { focus = PRG_prussiandiscipline } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+army_experience= 25
+add_ideas = PRG_atakcipa
+ } 
+
+ } 
+
+#Focus for Prussian artillery
+focus = { 
+id = PRG_prussianartillery
+icon = GFX_goal_generic_army_artillery2
+x = 7
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_furtherresearchofinfantryweapons } 
+mutually_exclusive = { focus = PRG_prussiandiscipline } 
+mutually_exclusive = { focus = PRG_newofficersexpandedtraining }  
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+ bonus = 1
+uses = 1 
+category = artillery
+}
+ } 
+
+ } 
+
+#Focus for Land doctrine advancments
+focus = { 
+id = PRG_landdoctrineadvancments
+icon = GFX_goal_generic_position_armies
+x = 9
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_armyexpansion } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+ bonus = 0.5 
+uses = 1 
+category = land_doctrine
+}
+ } 
+
+ } 
+
+#Focus for Army Expansion
+focus = { 
+id = PRG_armyexpansion
+icon = GFX_goal_rhineland
+x = 7
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_tech_bonus = {
+ bonus = 0.5 
+uses = 2 
+category = infantry_weapons
+}
+ } 
+
+ } 
+
+#Focus for Civilian-Military joint investment
+focus = { 
+id = PRG_civilianmilitaryjointinvestment
+icon = GFX_goal_generic_construction2
+x = 1
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_improverailwaynetwork } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+68 = {
+add_building_construction = { 
+type = industrial_complex 
+level = 4 
+instant_build = yes }
+add_building_construction = { 
+type = arms_factory
+level = 5
+instant_build = yes } 
+}
+68 = {
+add_extra_state_shared_building_slots = 9
+}
+ } 
+
+ } 
+
+#Focus for Exploitations of iron mines.
+focus = { 
+id = PRG_exploitationsofironmines
+icon = GFX_focus_generic_steel
+x = 2
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_civilianmilitaryjointinvestment focus = PRG_massiveindustrialcomplexinpommerania } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_resource= { 
+type = steel
+amount = 16 
+state = 62 
+}
+ } 
+
+ } 
+
+#Focus for Attract foreign arms dealers
+focus = { 
+id = PRG_attractforeignarmsdealers
+icon = GFX_goal_generic_intelligence_exchange
+x = 3
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_militarycomplex } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+5 = {
+add_building_construction = { 
+type = arms_factory
+level = 2 
+instant_build = yes }
+}
+5 = {
+add_extra_state_shared_building_slots = 2
+}
+ } 
+
+ } 
+
+#Focus for Dictator seizes control
+focus = { 
+id = PRG_dictatorseizescontrol
+icon = GFX_focus_smiling_buddha
+x = 20
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_peoplescongress } 
+mutually_exclusive = { focus = PRG_governmentforthepeople } 
+mutually_exclusive = { focus = PRG_governmentforthepeople } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+set_party_name = { 
+ideology = communism
+long_name = "The Only One"  
+name = "The Only One"
+}
+add_stability = -0.15
+ } 
+
+ } 
+
+#Focus for Improve railway network
+focus = { 
+id = PRG_improverailwaynetwork
+icon = GFX_goal_generic_construct_infrastructure
+x = 1
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_civilianfocus } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+random_owned_state = {
+add_building_construction = { 
+type = Infrastructure 
+level = 3 
+instant_build = yes }
+add_building_construction = { 
+type = Infrastructure 
+level = 3 
+instant_build = yes }
+add_building_construction = { 
+type = Infrastructure 
+level = 3 
+instant_build = yes }
+}
+ } 
+
+ } 
+
+#Focus for Massive Industrial complex in Pommerania
+focus = { 
+id = PRG_massiveindustrialcomplexinpommerania
+icon = GFX_goal_generic_army_tanks
+x = 3
+y = 3
+cost = 12
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_attractforeignarmsdealers } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+62 = {
+add_building_construction = { 
+type = arms_factory 
+level = 1 
+instant_build = yes }
+}
+63 = {
+add_building_construction = { 
+type = arms_factory 
+level = 2 
+instant_build = yes }
+}
+62 = {
+add_extra_state_shared_building_slots = 1 }
+63 = {
+add_extra_state_shared_building_slots = 2 }
+ } 
+
+ } 
+
+#Focus for Military Complex
+focus = { 
+id = PRG_militarycomplex
+icon = GFX_goal_generic_construct_mil_factory
+x = 3
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_industrialeffort } 
+mutually_exclusive = { focus = PRG_civilianfocus } 
+mutually_exclusive = { focus = PRG_civilianfocus } 
+mutually_exclusive = { focus = PRG_civilianfocus } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+64 = {
+add_building_construction = { 
+type = arms_factory 
+level = 3 
+instant_build = yes }
+}
+64 = {
+add_extra_state_shared_building_slots = 3
+}
+ } 
+
+ } 
+
+#Focus for Industrial Effort
+focus = { 
+id = PRG_industrialeffort
+icon = GFX_goal_generic_consumer_goods
+x = 2
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_tech_bonus = {
+ bonus = 0.5 
+uses = 2 
+category = construction_tech 
+}
+ } 
+
+ } 
+
+#Focus for Civilian Focus
+focus = { 
+id = PRG_civilianfocus
+icon = GFX_goal_generic_construct_civ_factory
+x = 1
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_industrialeffort } 
+mutually_exclusive = { focus = PRG_militarycomplex } 
+mutually_exclusive = { focus = PRG_militarycomplex } 
+mutually_exclusive = { focus = PRG_militarycomplex } 
+mutually_exclusive = { focus = PRG_militarycomplex } 
+mutually_exclusive = { focus = PRG_militarycomplex } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+62 = {
+add_building_construction = { 
+type = arms_factory 
+level = 1 
+instant_build = yes }
+}
+63 = {
+add_building_construction = { 
+type = arms_factory 
+level = 2 
+instant_build = yes }
+}
+62 = {
+add_extra_state_shared_building_slots = 1 }
+63 = {
+add_extra_state_shared_building_slots = 2 }
+ } 
+
+ } 
+
+#Focus for Government for the people
+focus = { 
+id = PRG_governmentforthepeople
+icon = GFX_focus_generic_join_comintern
+x = 23
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_peoplescongress } 
+mutually_exclusive = { focus = PRG_dictatorseizescontrol } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+set_party_name = { 
+ideology = communism 
+long_name = "People's Congress"
+name = "People's Congress"
+}
+ } 
+
+ } 
+
+#Focus for Submarine research
+focus = { 
+id = PRG_submarineresearch
+icon = GFX_goal_generic_navy_submarine
+x = 29
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_buildshipyards } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Expand Dockyards in Danzig
+focus = { 
+id = PRG_expanddockyardsindanzig
+icon = GFX_goal_generic_construct_naval_dockyard
+x = 31
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_buildshipyards } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+85 = {is_owned_by = PRG}
+ } 
+
+ } 
+
+#Focus for Reapproach Austria
+focus = { 
+id = PRG_reapproachaustria
+icon = GFX_focus_generic_diplomatic_treaty
+x = 14
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_germanunion } 
+mutually_exclusive = { focus = PRG_dealwithrussians } 
+mutually_exclusive = { focus = PRG_dealwithrussians } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+NOT = { has_war_with = PLC }
+ } 
+completion_reward = { 
+ASE = {
+country_event = {
+days = 1
+id = europacraftalis.29
+}
+}
+ } 
+
+ } 
+
+#Focus for Issue partition letter to Poland
+focus = { 
+id = PRG_issuepartitionlettertopoland
+icon = GFX_goal_generic_forceful_treaty
+x = 12
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_dealwithrussians } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+PLC = {
+country_event = {
+days = 1
+id = europacraftalis.32
+}
+}
+ } 
+
+ } 
+
+#Focus for New fort line in the Niederschlesien
+focus = { 
+id = PRG_newfortlineintheniederschlesien
+icon = GFX_goal_generic_construct_military
+x = 8
+y = 7
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_glorytotheprussianstate } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+66 = {is_owned_by = PRG}
+ } 
+completion_reward = { 
+66 = {
+add_building_construction = { 
+type = bunker 
+province = 11517
+level = 2 
+instant_build = yes }add_building_construction = { 
+type = bunker 
+province = 6534
+level = 2 
+instant_build = yes }add_building_construction = { 
+type = bunker 
+province = 3545
+level = 2 
+instant_build = yes }add_building_construction = { 
+type = bunker 
+province = 3485 
+level = 2 
+instant_build = yes }
+}
+ } 
+
+ } 
+
+#Focus for Build shipyards
+focus = { 
+id = PRG_buildshipyards
+icon = GFX_goal_generic_navy_cruiser
+x = 29
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+62 = {
+add_building_construction = { 
+type = dockyard
+level = 2 
+instant_build = yes }
+}
+62 = {
+add_extra_state_shared_building_slots = 2
+}
+ } 
+
+ } 
+
+#Focus for Prussia Uber Alles
+focus = { 
+id = PRG_prussiauberalles
+icon = GFX_focus_ger_revive_kaiserreich
+x = 10
+y = 8
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_massivearmydraft } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_state_claim = 65
+add_state_claim = 60
+add_state_claim = 58
+ } 
+
+ } 
+
+#Focus for Second line in Oberschlesien
+focus = { 
+id = PRG_secondlineinoberschlesien
+icon = GFX_goal_generic_construct_military
+x = 8
+y = 8
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_newfortlineintheniederschlesien } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+67 = {is_owned_by = PRG}
+ } 
+completion_reward = { 
+67 = {
+add_building_construction = { 
+type = bunker 
+province = 6512
+level = 2 
+instant_build = yes }add_building_construction = { 
+type = bunker 
+province = 9457  
+level = 2 
+instant_build = yes }
+}
+ } 
+
+ } 
+
+#Focus for Deal with Russians
+focus = { 
+id = PRG_dealwithrussians
+icon = GFX_goal_molotov_ribbentrop_pact
+x = 12
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_germanunion } 
+mutually_exclusive = { focus = PRG_reapproachaustria } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+NOT = { has_war_with = PLC }
+ } 
+completion_reward = { 
+SOV = {
+country_event = {
+days = 1
+id = europacraftalis.26
+}
+}
+ } 
+
+ } 
+
+#Focus for Northern germany interest
+focus = { 
+id = PRG_northerngermanyinterest
+icon = GFX_goal_generic_war_with_comintern
+x = 18
+y = 8
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_invadedanzig } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_state_claim = 58
+add_state_claim = 56
+add_state_claim = 57
+add_war_support = 0.05
+ } 
+
+ } 
+
+#Focus for German Union
+focus = { 
+id = PRG_germanunion
+icon = GFX_goal_anschluss
+x = 13
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_educationalreforms } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+create_faction= "German Union"
+ } 
+
+ } 
+
+#Focus for Educational Reforms
+focus = { 
+id = PRG_educationalreforms
+icon = GFX_focus_research2
+x = 13
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_crackdownonopponents } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_research_slot = 2add_tech_bonus = {
+ bonus = 0.5 
+uses = 2 
+category = electronics
+}
+ } 
+
+ } 
+
+#Focus for Naval Doctrine
+focus = { 
+id = PRG_navaldoctrine
+icon = GFX_goal_generic_navy_battleship
+x = 27
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_buildshipyards } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#Focus for Issue partition letter to Poland
+focus = { 
+id = PRG_issuepartitionlettertopoland
+icon = GFX_goal_generic_forceful_treaty
+x = 14
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_reapproachaustria } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+PLC = {
+country_event = {
+days = 1
+id = europacraftalis.31
+}
+}
+ } 
+
+ } 
+
+#Focus for Everlasting Peace
+focus = { 
+id = PRG_everlastingpeace
+icon = GFX_goal_generic_improve_relations
+x = 16
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_fairconstitution } 
+prerequisite = { focus = PRG_landforalliance } 
+ai_will_do = { 
+ factor = 1
+ } 
+
+ } 
+
+#End of focuses 
+ }

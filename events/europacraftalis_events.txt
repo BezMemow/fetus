@@ -1,0 +1,1543 @@
+
+add_namespace = europacraftalis
+
+##Event: Assasination attempt on Caden
+news_event = {
+ id = europacraftalis.1
+ title = europacraftalis.1.title
+ desc = europacraftalis.1.desc
+ picture = GFX_news_event_german_officers
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.1.a
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: Poland wants an alliance
+country_event = {
+ id = europacraftalis.2
+ title = europacraftalis.2.title
+ desc = europacraftalis.2.desc
+ picture = GFX_report_event_german_advisors_remain
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.2.a
+		ai_chance = { factor = 4000}
+		PLC = { create_faction = "Polish Alliance"
+				add_to_faction = ASE }
+	}
+	option = {
+		name = europacraftalis.2.b
+		ai_chance = { factor = 40}
+		add_opinion_modifier= { 
+			target = PLC
+			modifier = small_decrease
+		}
+	}
+	option = {
+		name = europacraftalis.2.c
+		ai_chance = { factor = 40}
+		add_opinion_modifier= { 
+			target = PLC
+			modifier = large_decrease 
+		}
+	}
+}
+
+##Event: Russia demands Crimea.
+country_event = {
+ id = europacraftalis.3
+ title = europacraftalis.3.title
+ desc = europacraftalis.3.desc
+ picture = GFX_report_event_nationalist_china_machinegun_firing
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.3.a
+		ai_chance = { factor = 40}
+		SOV = {
+create_wargoal = {
+type = annex_everything
+target = OTE
+}
+	}
+}
+	option = {
+		name = europacraftalis.3.b
+		ai_chance = { factor = 40}
+		hidden_effect = {
+		SOV = { set_state_owner = 226 }
+		SOV = { set_state_owner = 197 }
+		SOV = { set_state_owner = 192 }
+		SOV = { set_state_owner = 196 }
+		SOV = { set_state_owner = 200 }
+		SOV = { set_state_owner = 137 }
+		SOV = { set_state_controller = 226 }
+		SOV = { set_state_controller = 197 }
+		SOV = { set_state_controller = 192 }
+		SOV = { set_state_controller = 196 }
+		SOV = { set_state_controller = 200 }
+		SOV = { set_state_controller = 137 }
+		SOV = { transfer_state = 227 }
+		}
+
+	}
+}
+
+##Event: Poland demands Romanian independence
+country_event = {
+ id = europacraftalis.4
+ title = europacraftalis.4.title
+ desc = europacraftalis.4.desc
+ picture = GFX_report_event_romania_poland_visit
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.4.a
+		ai_chance = { factor = 400}
+		ROM = { set_state_owner = 79 }
+ROM = { set_state_owner = 80 }
+ROM = { set_state_owner = 78 }
+ROM = { set_state_owner = 46 }
+ROM = { set_state_owner = 81 }
+ROM = { set_state_owner = 77 }
+ROM = { set_state_controller = 79 }
+ROM = { set_state_controller = 80 }
+ROM = { set_state_controller = 78 }
+ROM = { set_state_controller = 46 }
+ROM = { set_state_controller = 81 }
+ROM = { set_state_controller = 77 }
+	}
+	option = {
+		name = europacraftalis.4.b
+		ai_chance = { factor = 400}
+		PLC = {
+add_state_claim = 79
+add_state_claim = 80
+add_state_claim = 78
+add_state_claim = 46
+add_state_claim = 81
+add_state_claim = 77
+}
+add_opinion_modifier = {
+target = PLC
+modifier = large_decrease
+}
+PLC = {
+country_event = {
+days = 1
+id = europacraftalis.5
+}
+	}
+}
+}
+
+##Event: Ottoman Empire disagrees.
+country_event = {
+ id = europacraftalis.5
+ title = europacraftalis.5.title
+ desc = europacraftalis.5.desc
+ picture = GFX_report_event_romanian_soldiers
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.5.a
+		ai_chance = { factor = 40}
+		declare_war_on = {
+target = OTE
+type = annex_everything
+}
+	}
+	option = {
+		name = europacraftalis.5.b
+		ai_chance = { factor = 40}
+		add_war_support = -0.05
+	}
+}
+
+##Event: Poland demands Greek independence
+country_event = {
+ id = europacraftalis.6
+ title = europacraftalis.6.title
+ desc = europacraftalis.6.desc
+ picture = GFX_report_event_chinese_soldiers_mountain
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.6.a
+		ai_chance = { factor = 40}
+		PLC = {
+create_wargoal = {
+type = annex_everything
+target = OTE
+}
+}
+PLC = {
+add_war_support = 0.02
+}
+	}
+}
+
+##Event: Civil war in Austria hungary!
+country_event = {
+ id = europacraftalis.7
+ title = europacraftalis.7.title
+ desc = europacraftalis.7.desc
+ picture = GFX_report_event_yugoslavia_partisans
+ fire_only_once = yes
+ major = yes
+ trigger = {
+tag = ASE
+AND = {
+ASE = {
+has_stability < 0.2
+NOT = { has_war_with = HUN }
+}
+}
+	}	
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.7.a
+		ai_chance = { factor = 400}
+	hidden_effect = {
+		HUN = { transfer_state = 664 }
+		HUN = { transfer_state = 70 }
+		HUN = { transfer_state = 43 }
+		HUN = { transfer_state = 155 }
+		HUN = { transfer_state = 154 }
+		HUN = { transfer_state = 76 }
+		HUN = { transfer_state = 73 }
+		HUN = { transfer_state = 84 }
+		HUN = { transfer_state = 83 }
+		HUN = { transfer_state = 82 }
+		HUN = { transfer_state = 109 }
+		HUN = { transfer_state = 71 }
+		HUN = { add_state_core = 664 }
+		HUN = { add_state_core = 70 }
+		HUN = { add_state_core = 43 }
+		HUN = { add_state_core = 155 }
+		HUN = { add_state_core = 154 }
+		HUN = { add_state_core = 76 }
+		HUN = { add_state_core = 73 }
+		HUN = { add_state_core = 84 }
+		HUN = { add_state_core = 83 }
+		HUN = { add_state_core = 82 }
+		HUN = { add_state_core = 109 }
+		HUN = { add_state_core = 71 }
+		HUN = {
+			country_event = {
+			days = 1
+			id = europacraftalis.11
+			}
+		}
+		declare_war_on = {
+		target = HUN
+		type = annex_everything
+		}
+	}
+		ASE = {
+			country_event = {
+			days = 1
+			id = europacraftalis.34
+			}
+		}
+		news_event = europacraftalis.10
+	}
+	option = {
+		name = europacraftalis.7.b
+		ai_chance = { factor = 40}
+		hidden_effect = {
+		HUN = { set_state_owner = 70 }
+		HUN = { transfer_state = 664 }
+		HUN = { transfer_state = 70 }
+		HUN = { transfer_state = 43 }
+		HUN = { transfer_state = 155 }
+		HUN = { transfer_state = 154 }
+		HUN = { transfer_state = 76 }
+		HUN = { transfer_state = 73 }
+		HUN = { transfer_state = 84 }
+		HUN = { transfer_state = 83 }
+		HUN = { transfer_state = 82 }
+		HUN = { transfer_state = 109 }
+		HUN = { transfer_state = 71 }
+		HUN = { add_state_core = 664 }
+		HUN = { add_state_core = 70 }
+		HUN = { add_state_core = 43 }
+		HUN = { add_state_core = 155 }
+		HUN = { add_state_core = 154 }
+		HUN = { add_state_core = 76 }
+		HUN = { add_state_core = 73 }
+		HUN = { add_state_core = 84 }
+		HUN = { add_state_core = 83 }
+		HUN = { add_state_core = 82 }
+		HUN = { add_state_core = 109 }
+		HUN = { add_state_core = 71 }
+		}
+	}
+}
+
+##Event: Support Austria Hungary
+country_event = {
+ id = europacraftalis.8
+ title = europacraftalis.8.title
+ desc = europacraftalis.8.desc
+ picture = GFX_report_event_yugoslavian_cavalry
+ fire_only_once = yes
+ major = yes
+ trigger = {
+tag = PLC
+ASE = {
+has_war_with = HUN
+}
+	}	
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = europacraftalis.8.a
+		ai_chance = { factor = 40 }
+		create_faction = "The Polish Alliance"
+ASE = {
+country_event = {
+days = 1
+id = europacraftalis.9
+}
+}
+	}
+	option = {
+		name = europacraftalis.8.b
+		ai_chance = { factor = 400 }
+		ASE = {
+			add_ideas = ASE_advisors
+		}
+	}
+}
+
+##Event: Invitation to the Polish Alliance.
+country_event = {
+ id = europacraftalis.9
+ title = europacraftalis.9.title
+ desc = europacraftalis.9.desc
+ picture = GFX_report_event_hitler_handshake
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.9.a
+		ai_chance = { factor = 4000}
+		PLC = {
+		create_faction = "Polish alliance"
+		add_to_faction = ASE
+}
+		HUN = {
+			country_event = {
+			days = 1
+			id = europacraftalis.11
+			}
+		}
+	}
+	option = {
+		name = europacraftalis.9.b
+		ai_chance = { factor = 40}
+	}
+}
+
+##Event: Austrian Civil War
+news_event = {
+ id = europacraftalis.10
+ title = europacraftalis.10.title
+ desc = europacraftalis.10.desc
+ picture = GFX_news_event_ger_civil_war
+ fire_only_once = yes
+ major = yes
+ trigger = {
+	ASE = {
+	has_war_with = HUN
+	}
+	}	
+ mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.10.a
+		ai_chance = { factor = 40}
+	}
+}
+
+##Event: Patriots rise up!
+country_event = {
+ id = europacraftalis.11
+ title = europacraftalis.11.title
+ desc = europacraftalis.11.desc
+ picture = GFX_report_event_french_resistance_01
+ fire_only_once = yes
+ major = yes
+ trigger = {
+tag = HUN
+HUN = {
+has_war_with = ASE
+}
+	}	
+	mean_time_to_happen = { days = 180 }
+	option = {
+		name = europacraftalis.11.a
+		ai_chance = { factor = 40}
+		hidden_effect = {
+random_owned_controlled_state = {
+create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				}
+				
+						random_owned_controlled_state = {
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				}
+						random_owned_controlled_state = {
+						prioritize = { 43 }
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				}
+						random_owned_controlled_state = {
+						prioritize = { 43 }
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				}
+						random_owned_controlled_state = {
+						prioritize = { 43 }
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				}
+						random_owned_controlled_state = {
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				}
+						random_owned_controlled_state = {
+						prioritize = { 43 }
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				}
+						random_owned_controlled_state = {
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				}
+						random_owned_controlled_state = {
+						prioritize = { 43 }
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				}
+						random_owned_controlled_state = {
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				}
+						random_owned_controlled_state = {
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = HUN
+		}
+	}
+}
+}
+}
+
+##Event: Prussia demands Danzig
+country_event = {
+ id = europacraftalis.12
+ title = europacraftalis.12.title
+ desc = europacraftalis.12.desc
+ picture = GFX_report_event_hitler_parade
+ fire_only_once = yes
+ is_triggered_only = yes
+ major = yes
+ mean_time_to_happen = { days = 1 }
+	option = {
+		name = europacraftalis.12.a
+		ai_chance = { factor = 80}
+		PRG = {
+country_event = {
+days = 1 
+id = europacraftalis.13
+}
+}
+hidden_effect = {
+news_event = europacraftalis.14
+}
+	}
+	option = {
+		name = europacraftalis.12.b
+		ai_chance = { factor = 40 }
+			hidden_effect = {
+			PRG = { country_event = {
+			days = 1
+			id = europacraftalis.38
+			}
+			}
+			}
+	}
+}
+
+##Event: Poland Lithuania Declined.
+country_event = {
+ id = europacraftalis.13
+ title = europacraftalis.13.title
+ desc = europacraftalis.13.desc
+ picture = GFX_report_event_polish_tanks_02
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+ mean_time_to_happen = { days = 1 }
+	option = {
+		name = europacraftalis.13.a
+		ai_chance = { factor = 4000}
+		news_event = europacraftalis.15
+		add_timed_idea = { idea = PRG_polishoffensive days = 50 }
+		declare_war_on = {
+		target = PLC
+		type = annex_everything
+		}
+
+	}
+	option = {
+		name = europacraftalis.13.b
+		ai_chance = { factor = 400}
+	}
+}
+
+##Event: Poland Lithuania refuses Prussian Demands
+news_event = {
+ id = europacraftalis.14
+ title = europacraftalis.14.title
+ desc = europacraftalis.14.desc
+ picture = GFX_news_event_021
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.14.a
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: Prussian Polish offensive.
+news_event = {
+ id = europacraftalis.15
+ title = europacraftalis.15.title
+ desc = europacraftalis.15.desc
+ picture = GFX_news_event_generic_panzer_attack
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.15.a
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: Fall of Posen
+news_event = {
+ id = europacraftalis.16
+ title = europacraftalis.16.title
+ desc = europacraftalis.16.desc
+ picture = GFX_news_event_kiev_ruins
+ major = yes
+ trigger = {
+		PRG = { controls_state = 86 }
+		NOT = { has_global_flag = plc_fall_posen }
+	}	
+	mean_time_to_happen = { days = 1}
+	
+	immediate = {
+		set_global_flag = plc_fall_posen
+	}
+	
+	option = {
+		name = europacraftalis.16.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+##Event: Prussia demands Silesia
+country_event = {
+ id = europacraftalis.17
+ title = europacraftalis.17.title
+ desc = europacraftalis.17.desc
+ picture = GFX_report_event_spain_civil_war_soldiers
+ fire_only_once = yes
+ is_triggered_only = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.17.a
+		ai_chance = { factor = 40}
+		PRG = {
+country_event = {
+days = 1
+id = europacraftalis.18
+}
+}
+66 = {
+add_building_construction = { 
+type = bunker 
+province = 6595 
+level = 1 
+instant_build = yes }
+add_building_construction = { 
+type = bunker 
+province = 9470 
+level = 1 
+instant_build = yes }
+add_building_construction = { 
+type = bunker 
+province = 3438
+level = 1 
+instant_build = yes }
+}
+	}
+	option = {
+		name = europacraftalis.17.b
+		ai_chance = { factor = 40}
+		hidden_effect = {
+			PRG = { set_state_owner = 67 }
+			PRG = { set_state_owner = 66 }
+			PRG = { set_state_owner = 762 }
+			PRG = { set_state_controller = 67 }
+			PRG = { set_state_controller = 66 }
+			PRG = { set_state_controller = 762 }
+			PRG = { add_state_core = 67 }
+			PRG = { add_state_core = 66 }
+		}
+	news_event = europacraftalis.19
+	}
+}
+
+##Event: Austria declines.
+country_event = {
+ id = europacraftalis.18
+ title = europacraftalis.18.title
+ desc = europacraftalis.18.desc
+ picture = GFX_report_event_swedish_soldier
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.18.a
+		ai_chance = { factor = 40}
+		declare_war_on = {
+target = ASE
+type = annex_everything
+}
+	}
+	option = {
+		name = europacraftalis.18.b
+		ai_chance = { factor = 50}
+		hidden_effect = {
+PRG = { set_state_owner = 66 }
+PRG = { set_state_owner = 67 }
+PRG = { set_state_owner = 762 }
+PRG = { set_state_controller = 66 }
+PRG = { set_state_controller = 67 }
+PRG = { set_state_controller = 762 }
+PRG = { add_state_core = 66 }
+PRG = { add_state_core = 67 }
+}
+ASE = {
+create_wargoal = {
+type = annex_everything
+target = PRG
+}
+}
+news_event = europacraftalis.19
+	}
+}
+
+##Event: Prussian occupation of Silesia
+news_event = {
+ id = europacraftalis.19
+ title = europacraftalis.19.title
+ desc = europacraftalis.19.desc
+ picture = GFX_news_event_hungarian_soldiers
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.19.a
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: Prussia demands Wielkopolska
+country_event = {
+ id = europacraftalis.20
+ title = europacraftalis.20.title
+ desc = europacraftalis.20.desc
+ picture = GFX_report_event_yugoslavia_partisans
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.20.a
+		ai_chance = { factor = 40}
+		PRG = {
+declare_war_on = {
+target = PLC
+type = annex_everything
+}
+}
+	}
+}
+
+##Event: Poland surrenders.
+country_event = {
+ id = europacraftalis.21
+ title = europacraftalis.21.title
+ desc = europacraftalis.21.desc
+ picture = GFX_report_event_korean_war_march
+ fire_only_once = yes
+ major = yes
+ trigger = {
+tag = PRG
+PLC = {
+surrender_progress > 0.7
+}
+PLC = {
+has_war_with = PRG
+}
+	}	
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.21.a
+		ai_chance = { factor = 4000}
+		PRG = {
+			white_peace = PLC
+		}
+			hidden_effect = {
+			PRG = { 
+			transfer_state = 85
+			transfer_state = 86
+			add_state_core = 85
+			add_state_core = 86
+			transfer_state = 777
+			transfer_state = 767
+			}
+	}
+		news_event = europacraftalis.22
+	}
+	option = {
+		name = europacraftalis.21.b
+		ai_chance = { factor = 40}
+		PLC = {
+			add_timed_idea = { idea = PLC_fight_for_poland days = 150 }
+		}
+	}
+}
+
+##Event: Poland gives up.
+news_event = {
+ id = europacraftalis.22
+ title = europacraftalis.22.title
+ desc = europacraftalis.22.desc
+ picture = GFX_news_event_german_soldiers
+ is_triggered_only = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.22.a
+		ai_chance = { factor = 40}
+	}
+}
+
+##Event: Land for Alliance.
+country_event = {
+ id = europacraftalis.23
+ title = europacraftalis.23.title
+ desc = europacraftalis.23.desc
+ picture = GFX_report_event_second_vienna_award_pact
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.23.a
+		ai_chance = { factor = 40}
+		PRG = { set_state_owner = 85 }
+PRG = { set_state_controller = 85 }
+PRG = { add_state_core = 85 }
+give_guarantee = PLC
+	}
+	option = {
+		name = europacraftalis.23.b
+		ai_chance = { factor = 1}
+		add_opinion_modifier= { 
+target = PRG
+modifier = small_decrease 
+}
+PRG = {
+country_event = {
+days = 1
+id = europacraftalis.24
+}
+}
+	}
+}
+
+##Event: Poland disagreed our proposal.
+country_event = {
+ id = europacraftalis.24
+ title = europacraftalis.24.title
+ desc = europacraftalis.24.desc
+ picture = GFX_report_event_canada_treaty
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.24.a
+		ai_chance = { factor = 40}
+	}
+}
+
+##Event: Poland demands Croatian independence
+country_event = {
+ id = europacraftalis.25
+ title = europacraftalis.25.title
+ desc = europacraftalis.25.desc
+ picture = GFX_report_event_soviet_soldiers_tank
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.25.a
+		ai_chance = { factor = 40}
+		CRO = {
+set_state_owner = 109
+set_state_controller = 109
+add_state_core = 109
+set_state_owner = 103
+set_state_controller = 103
+add_state_core = 103
+}
+ASE = {
+puppet = CRO
+}
+	}
+	option = {
+		name = europacraftalis.25.b
+		ai_chance = { factor = 1}
+		PLC = {
+create_wargoal = {
+type = annex_everything
+target = ASE
+}
+}
+	}
+}
+
+##Event: Deal with the Prussians
+country_event = {
+ id = europacraftalis.26
+ title = europacraftalis.26.title
+ desc = europacraftalis.26.desc
+ picture = GFX_report_event_soviet_tanks
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.26.a
+		ai_chance = { factor = 400}
+		PRG = {
+give_guarantee = SOV
+country_event = {
+days = 1
+id = europacraftalis.27
+}
+}
+give_guarantee = PRG
+SOV = {
+add_state_claim = 12
+add_state_claim = 207
+add_state_claim = 241
+add_state_claim = 206
+add_state_claim = 204
+add_state_claim = 194
+add_state_claim = 202
+add_state_claim = 201
+add_state_claim = 203
+add_state_claim = 198
+add_state_claim = 199
+}
+	}
+	option = {
+		name = europacraftalis.26.b
+		ai_chance = { factor = 10}
+		add_opinion_modifier= { 
+target = PRG 
+modifier = small_decrease
+}
+	}
+}
+
+##Event: Russia accepts
+country_event = {
+ id = europacraftalis.27
+ title = europacraftalis.27.title
+ desc = europacraftalis.27.desc
+ picture = GFX_report_event_british_artillery
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.27.a
+		ai_chance = { factor = 40}
+		add_state_claim = 86
+add_state_claim = 85
+add_state_claim = 98
+add_state_claim = 97
+add_state_claim = 87
+news_event = europacraftalis.28
+	}
+}
+
+##Event: Prussian-Russian pact
+news_event = {
+ id = europacraftalis.28
+ title = europacraftalis.28.title
+ desc = europacraftalis.28.desc
+ picture = GFX_news_event_017
+ is_triggered_only = yes
+ fire_only_once = no
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.28.a
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: Prussians approach us.
+country_event = {
+ id = europacraftalis.29
+ title = europacraftalis.29.title
+ desc = europacraftalis.29.desc
+ picture = GFX_report_event_molotov_ribentrop_handshake
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.29.a
+		ai_chance = { factor = 4000}
+		add_state_claim = 88
+add_state_claim = 91
+add_state_claim = 89
+PRG = {
+country_event = {
+days = 1
+id = europacraftalis.30
+}
+}
+	}
+	option = {
+		name = europacraftalis.29.b
+		ai_chance = { factor = 40}
+	}
+}
+
+##Event: Austria accepts.
+country_event = {
+ id = europacraftalis.30
+ title = europacraftalis.30.title
+ desc = europacraftalis.30.desc
+ picture = GFX_report_event_pierre_laval
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.30.a
+		ai_chance = { factor = 40}
+		add_state_claim = 86
+add_state_claim = 85
+add_state_claim = 98
+add_state_claim = 97
+add_state_claim = 87
+	}
+}
+
+##Event: The 1st Partition
+country_event = {
+ id = europacraftalis.31
+ title = europacraftalis.31.title
+ desc = europacraftalis.31.desc
+ picture = GFX_report_event_chamberlain
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.31.a
+		ai_chance = { factor = 400}
+		hidden_effect = {
+			PRG = {
+			transfer_state = 86
+			transfer_state = 85
+			transfer_state = 98
+			transfer_state = 97
+			transfer_state = 87
+			add_state_core = 86
+			add_state_core = 85
+			add_state_core = 98
+			add_state_core = 97
+			add_state_core = 87
+			transfer_state = 777
+			transfer_state = 767
+}
+ASE = {
+set_state_owner = 88
+set_state_owner = 89
+set_state_owner = 91
+set_state_controller = 88
+set_state_controller = 89
+set_state_controller = 91
+add_state_core = 88
+add_state_core = 89
+add_state_core = 91
+}
+}
+news_event = europacraftalis.33
+	}
+	option = {
+		name = europacraftalis.31.b
+		ai_chance = { factor = 40}
+		PRG = {
+create_wargoal = {
+type = annex_everything
+target = PLC
+}
+create_faction = "Polish Coalition"
+add_to_faction = ASE
+}
+	}
+}
+
+##Event: The 1st Partition
+country_event = {
+ id = europacraftalis.32
+ title = europacraftalis.32.title
+ desc = europacraftalis.32.desc
+ picture = GFX_report_event_chamberlain
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.32.a
+		ai_chance = { factor = 4000}
+		hidden_effect = {
+PRG = {
+add_state_core = 86
+add_state_core = 85
+add_state_core = 98
+add_state_core = 97
+add_state_core = 87
+set_state_owner = 86
+set_state_owner = 85
+set_state_owner = 98
+set_state_owner = 97
+set_state_owner = 87
+set_state_controller = 86
+set_state_controller = 85
+set_state_controller = 98
+set_state_controller = 97
+set_state_controller = 87
+transfer_state = 767
+transfer_state = 777
+}
+SOV = {
+add_state_core = 12
+add_state_core = 206
+add_state_core = 207
+add_state_core = 241
+add_state_core = 204
+add_state_core = 194
+add_state_core = 201
+add_state_core = 202
+add_state_core = 199
+add_state_core = 198
+add_state_core = 203
+set_state_owner = 12
+set_state_owner = 206
+set_state_owner = 207
+set_state_owner = 241
+set_state_owner = 204
+set_state_owner = 194
+set_state_owner = 201
+set_state_owner = 202
+set_state_owner = 199
+set_state_owner = 198
+set_state_owner = 203
+set_state_controller = 12
+set_state_controller = 206
+set_state_controller = 207
+set_state_controller = 241
+set_state_controller = 204
+set_state_controller = 194
+set_state_controller = 201
+set_state_controller = 202
+set_state_controller = 199
+set_state_controller = 198
+set_state_controller = 203
+}
+}
+	news_event = europacraftalis.33
+	}
+	option = {
+		name = europacraftalis.32.b
+		ai_chance = { factor = 400}
+		PRG = {
+create_wargoal = {
+type = annex_everything
+target = PLC
+}
+create_faction = "Polish coalition"
+add_to_faction = SOV
+}
+	}
+}
+
+##Event: First Partition of Poland
+news_event = {
+ id = europacraftalis.33
+ title = europacraftalis.33.title
+ desc = europacraftalis.33.desc
+ picture = GFX_news_event_german_soldiers
+ is_triggered_only = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	immediate = {
+	set_global_flag = plc_fall_posen
+	}
+	
+	option = {
+		name = europacraftalis.33.a
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: Fascists support Austria
+country_event = {
+ id = europacraftalis.34
+ title = europacraftalis.34.title
+ desc = europacraftalis.34.desc
+ picture = GFX_report_event_polish_tanks_01
+ fire_only_once = yes
+ major = yes
+ trigger = {
+tag = ASE
+ASE = {
+has_war_with = HUN
+}
+	}	
+	mean_time_to_happen = { days = 30}
+	option = {
+		name = europacraftalis.34.a
+		ai_chance = { factor = 40}
+		hidden_effect = {
+random_owned_controlled_state = {
+create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = ASE
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = ASE
+		}
+				}
+				
+						random_owned_controlled_state = {
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = ASE
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = ASE
+		}
+				}
+random_owned_controlled_state = {
+create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = ASE
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = ASE
+		}
+				}
+				
+						random_owned_controlled_state = {
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = ASE
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = ASE
+		}
+				}
+random_owned_controlled_state = {
+create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = ASE
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = ASE
+		}
+				}
+				
+						random_owned_controlled_state = {
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = ASE
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie Division\" division_template = \"Infanterie Division\" start_experience_factor = 0.0" 
+		owner = ASE
+		}
+}
+	}
+	add_popularity = { ideology = fascism
+	popularity = 0.2
+	}
+}
+}
+
+##Event: Civil war in Poland Lithuania
+news_event = {
+ id = europacraftalis.35
+ title = europacraftalis.35.title
+ desc = europacraftalis.35.desc
+ picture = GFX_news_event_italian_tank_desert
+ is_triggered_only = yes
+ major = yes
+ trigger = {
+PLC = { has_civil_war = yes }
+	}	
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.35.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+##Event: Polish Winter Defensive
+news_event = {
+ id = europacraftalis.36
+ title = europacraftalis.36.title
+ desc = europacraftalis.36.desc
+ picture = GFX_news_event_011
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.36.a
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: Rifle advancement
+news_event = {
+ id = europacraftalis.37
+ title = europacraftalis.37.title
+ desc = europacraftalis.37.desc
+ picture = GFX_news_event_german_volunteers
+ is_triggered_only = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.37.a
+		ai_chance = { factor = 1}
+	}
+}
+##polandaccepts
+country_event = {
+ id = europacraftalis.38
+ title = europacraftalis.38.title
+ desc = europacraftalis.38.desc
+ picture = GFX_report_event_pierre_laval
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.38.a
+		ai_chance = { factor = 40}
+		PRG = {
+		transfer_state = 85
+		}
+	}
+}
+
+##british-prussian alliance
+country_event = {
+ id = europacraftalis.39
+ title = europacraftalis.39.title
+ desc = europacraftalis.39.desc
+ picture = GFX_report_event_british_inspect_troops
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.1.a
+		ai_chance = { factor = 40}
+		ENG = {
+			add_to_faction = PRG
+		}
+	}
+	option = {
+		name = europacraftalis.1.b
+		ai_chance = { factor = 1}
+		add_opinion_modifier= { 
+			target = ENG 
+			modifier = large_decrease
+		}
+		add_opinion_modifier= { 
+			target = FRA
+			modifier = small_increase
+		}
+	}
+}
+
+##british-france alliance
+country_event = {
+ id = europacraftalis.40
+ title = europacraftalis.40.title
+ desc = europacraftalis.40.desc
+ picture = GFX_report_event_degaulle_churchill
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.40.a
+		ai_chance = { factor = 4000}
+		ENG = {
+			add_to_faction = FRA
+		}
+	}
+	option = {
+		name = europacraftalis.40.b
+		ai_chance = { factor = 40}
+		add_opinion_modifier= { 
+			target = ENG 
+			modifier = large_decrease
+		}
+	}
+}
+
+##Event: British occupy Gibraltar
+country_event = {
+ id = europacraftalis.41
+ title = europacraftalis.41.title
+ desc = europacraftalis.41.desc
+ picture = GFX_report_event_ast_troops_landing
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.41.a
+		ai_chance = { factor = 40}
+		ENG = {
+			create_wargoal = {
+			type = annex_everything
+			target = SPR
+			}
+		}
+	}
+	option = {
+		name = europacraftalis.41.b
+		ai_chance = { factor = 4000}
+		ENG = { transfer_state = 118 }
+		news_event = europacraftalis.42
+	}
+}
+
+##Event: British occupation of Gibraltar
+news_event = {
+ id = europacraftalis.42
+ title = europacraftalis.42.title
+ desc = europacraftalis.42.desc
+ picture = news_event_british_troops_marching
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.42.a
+		ai_chance = { factor = 40}
+	}
+}
+
+##Event: Summer Defensive of 1938
+news_event = {
+ id = europacraftalis.43
+ title = europacraftalis.43.title
+ desc = europacraftalis.43.desc
+ picture = GFX_news_event_german_volunteers
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.43.a
+		ai_chance = { factor = 40}
+	}
+}
+
+##Event: Poland wants to join our alliance.
+country_event = {
+ id = europacraftalis.44
+ title = europacraftalis.44.title
+ desc = europacraftalis.44.desc
+ picture = GFX_report_event_polish_army
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.44.a
+		ai_chance = { factor = 40}
+		add_to_faction = PLC
+	}
+	option = {
+		name = europacraftalis.44.b
+		ai_chance = { factor = 400}
+	}
+}
+
+##Event: Poland wants to ally
+country_event = {
+ id = europacraftalis.45
+ title = europacraftalis.45.title
+ desc = europacraftalis.45.desc
+ picture = GFX_report_event_spain_civil_war_volunteers_01
+ is_triggered_only = yes
+ fire_only_once = yes
+ major = yes
+	mean_time_to_happen = { days = 1}
+	option = {
+		name = europacraftalis.45.a
+		ai_chance = { factor = 40}
+		PLC = {
+create_faction = "Polish alliance"
+add_to_faction = SOV
+}
+	}
+	option = {
+		name = europacraftalis.45.b
+		ai_chance = { factor = 1}
+	}
+}

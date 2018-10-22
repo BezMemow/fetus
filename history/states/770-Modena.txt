@@ -1,0 +1,20 @@
+state={
+	id=770
+	name="STATE_770"
+	provinces={
+		3773 
+	}
+	history = {
+	owner = MOD
+	add_core_of = MOD
+	buildings = {
+		infrastructure = 3
+		arms_factory = 1
+		industrial_complex = 4
+	}
+	}
+	manpower=50000
+	state_category = city
+	
+	buildings_max_level_factor=1.000
+}

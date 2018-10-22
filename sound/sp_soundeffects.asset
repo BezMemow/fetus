@@ -1,0 +1,12 @@
+#################
+#German Speeches#
+#################
+
+soundeffect = {
+	name = "sp_prg_plc"
+	sounds = {
+		sound = sp_prg_plc	
+	}
+	volume = 1.4
+}
+

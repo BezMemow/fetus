@@ -1,0 +1,1541 @@
+focus_tree = { 
+id = newpoland
+country = { 
+factor = 0 
+modifier = { 
+add = 10 
+tag = PLC 
+} 
+} 
+#Focus for Romanian independence
+focus = { 
+id = PLC_romanianindependence
+icon = GFX_focus_rom_preserve_romania
+x = 28
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_alliancewithaustriahungary focus = PLC_crimeabacktorussia } 
+ai_will_do = { 
+ factor = 40
+ } 
+available = { 
+OTE = { owns_state = 78 }
+OTE = { owns_state = 46 }
+OTE = { owns_state = 79 }
+OTE = { owns_state = 81 }
+OTE = { owns_state = 80 }
+ } 
+completion_reward = { 
+OTE = {
+country_event = {
+days = 10
+id = europacraftalis.4
+}
+}
+ } 
+
+ } 
+
+#Focus for Crimea back to Russia
+focus = { 
+id = PLC_crimeabacktorussia
+icon = GFX_goal_generic_attack_allies
+x = 29
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_ottomanquestion } 
+ai_will_do = { 
+ factor = 40
+ } 
+bypass = { 
+SOV = { controls_state = 192 }
+SOV = { controls_state = 197 }
+SOV = { controls_state = 196 }
+SOV = { controls_state = 226 }
+SOV = { controls_state = 137 }
+SOV = { controls_state = 200 }
+ } 
+available = { 
+OTE = { controls_state = 192 }
+OTE = { controls_state = 197 }
+OTE = { controls_state = 196 }
+OTE = { controls_state = 226 }
+OTE = { controls_state = 137 }
+OTE = { controls_state = 200 }
+ } 
+completion_reward = { 
+OTE = {
+country_event = {
+days = 10
+id = europacraftalis.3
+}
+}
+ } 
+
+ } 
+
+#Focus for Alliance with Austria-Hungary
+focus = { 
+id = PLC_alliancewithaustriahungary
+icon = GFX_focus_proclaim_the_restauration_of_Austria_Hungary
+x = 27
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_ottomanquestion } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+ASE = {
+country_event = { days = 10
+id = europacraftalis.2
+}
+}
+ } 
+
+ } 
+
+#Focus for Ottoman Question
+focus = { 
+id = PLC_ottomanquestion
+icon = GFX_focus_generic_treaty
+x = 28
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_war_support = 0.1
+ } 
+
+ } 
+
+#Focus for Szlachta Industrial program
+focus = { 
+id = PLC_szlachtaindustrialprogram
+icon = GFX_goal_generic_construction2
+x = 2
+y = 0
+cost = 10
+available_if_capitulated = yes 
+mutually_exclusive = { focus = PLC_kingsindustryplan } 
+ai_will_do = { 
+ factor = 4000
+ } 
+completion_reward = { 
+add_ideas = PLC_construction
+ } 
+
+ } 
+
+#Focus for King's industry plan
+focus = { 
+id = PLC_kingsindustryplan
+icon = GFX_goal_generic_construction2
+x = 6
+y = 0
+cost = 10
+available_if_capitulated = yes 
+mutually_exclusive = { focus = PLC_szlachtaindustrialprogram } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+10 = {
+add_building_construction = { 
+type = industrial_complex 
+level = 2 
+instant_build = yes }
+}
+88 = {
+add_building_construction = { 
+type = industrial_complex 
+level = 2 
+instant_build = yes }
+}
+10 = { 
+add_extra_state_shared_building_slots = 2 }
+88 = { 
+add_extra_state_shared_building_slots = 2 }
+ } 
+
+ } 
+
+#Focus for Build Liepaja
+focus = { 
+id = PLC_buildliepaja
+icon = GFX_goal_generic_construct_civ_factory
+x = 1
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_szlachtaindustrialprogram } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+189 = {
+add_building_construction = { 
+type = dockyard 
+level = 4 
+instant_build = yes }
+}
+189 = {
+add_building_construction = { 
+type = industrial_complex  
+level = 2 
+instant_build = yes }
+}
+189 = {
+add_extra_state_shared_building_slots = 6 }
+ } 
+
+ } 
+
+#Focus for Develop Ruthenia
+focus = { 
+id = PLC_developruthenia
+icon = GFX_goal_generic_consumer_goods
+x = 3
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_szlachtaindustrialprogram } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+201 = {
+add_building_construction = { 
+type = industrial_complex 
+level = 4 
+instant_build = yes }
+}
+201 = {
+add_extra_state_shared_building_slots = 4 }
+add_ideas = PLC_ukraine
+ } 
+
+ } 
+
+#Focus for Sosnowiec
+focus = { 
+id = PLC_sosnowiec
+icon = GFX_goal_generic_construction2
+x = 1
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_developruthenia } 
+prerequisite = { focus = PLC_buildliepaja } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+87 = {
+add_building_construction = { 
+type = industrial_complex
+level = 1 
+instant_build = yes }
+}
+87 = {
+add_extra_state_shared_building_slots = 1 }
+ } 
+
+ } 
+
+#Focus for Bobrownica
+focus = { 
+id = PLC_bobrownica
+icon = GFX_goal_generic_construct_infrastructure
+x = 2
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_sosnowiec } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+87 = {
+add_building_construction = { 
+type = industrial_complex
+level = 1 
+instant_build = yes }
+}
+87 = {
+add_extra_state_shared_building_slots = 1 }
+ } 
+
+ } 
+
+#Focus for Military Developement
+focus = { 
+id = PLC_militarydevelopement
+icon = GFX_goal_generic_construct_mil_factory
+x = 3
+y = 4
+cost = 15
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_militarypreparations focus = PLC_bobrownica } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+90 = {
+add_building_construction = { 
+type = arms_factory
+level = 2 
+instant_build = yes }
+}
+87 = {
+add_building_construction = { 
+type = arms_factory 
+level = 2 
+instant_build = yes }
+}
+88 = {
+add_building_construction = { 
+type = arms_factory 
+level = 2 
+instant_build = yes }
+}
+90 = {
+add_extra_state_shared_building_slots = 2 }
+87 = {
+add_extra_state_shared_building_slots = 2 }
+88 = {
+add_extra_state_shared_building_slots = 2 }
+ } 
+
+ } 
+
+#Focus for Pay the debts
+focus = { 
+id = PLC_paythedebts
+icon = GFX_goal_generic_production
+x = 6
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_kingsindustryplan } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_timed_idea = { 
+idea = PLC_debt 
+days = 100 
+}
+ } 
+
+ } 
+
+#Focus for The Commonwealth of 3 Nations
+focus = { 
+id = PLC_thecommonwealthof3nations
+icon = GFX_thecommonwealthof3nations
+x = 7
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_paythedebts } 
+mutually_exclusive = { focus = PLC_polandlithuania } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+202 = {
+add_building_construction = { 
+type = industrial_complex
+level = 2 
+instant_build = yes }
+}
+11 = {
+add_building_construction = { 
+type = industrial_complex
+level = 2 
+instant_build = yes }
+}
+10 = {
+add_building_construction = { 
+type = industrial_complex
+level = 2 
+instant_build = yes }
+}
+202 = {
+add_extra_state_shared_building_slots = 2 }
+11 = {
+add_extra_state_shared_building_slots = 2 }
+10 = {
+add_extra_state_shared_building_slots = 2 }
+ } 
+
+ } 
+
+#Focus for Poland-Lithuania
+focus = { 
+id = PLC_polandlithuania
+icon = GFX_goal_plc_alliance
+x = 5
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_paythedebts } 
+mutually_exclusive = { focus = PLC_thecommonwealthof3nations } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+11 = {
+add_building_construction = { 
+type = industrial_complex 
+level = 3
+instant_build = yes }
+}
+10 = {
+add_building_construction = { 
+type = industrial_complex
+level = 3 
+instant_build = yes }
+}
+11 = {
+add_extra_state_shared_building_slots = 3 }
+10 = {
+add_extra_state_shared_building_slots = 3 }
+ } 
+
+ } 
+
+#Focus for Military preparations
+focus = { 
+id = PLC_militarypreparations
+icon = GFX_goal_generic_production
+x = 5
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_polandlithuania } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+97 = {
+add_building_construction = { 
+type = arms_factory 
+level = 1 
+instant_build = yes }
+}
+92 = {
+add_building_construction = { 
+type = arms_factory 
+level = 2 
+instant_build = yes }
+}
+97 = {
+add_extra_state_shared_building_slots = 1 }
+92 = {
+add_extra_state_shared_building_slots = 2 }
+ } 
+
+ } 
+
+#Focus for Construction of Kielce
+focus = { 
+id = PLC_constructionofkielce
+icon = GFX_goal_generic_construct_civilian
+x = 3
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_militarydevelopement } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_timed_idea = { 
+idea = PLC_mrshelo
+days = 50 
+}
+90 = {
+add_building_construction = { 
+type = industrial_complex
+level = 1 
+instant_build = yes }
+}
+90 = {
+add_extra_state_shared_building_slots = 1 }
+ } 
+
+ } 
+
+#Focus for Nurokami's Farm
+focus = { 
+id = PLC_nurokamisfarm
+icon = GFX_goal_generic_construct_civ_factory
+x = 6
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_militarypreparations } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+92 = {
+add_building_construction = { 
+type = industrial_complex
+level = 1
+instant_build = yes }
+}
+92 = {
+add_extra_state_shared_building_slots = 1 }
+ } 
+
+ } 
+
+#Focus for DrInsano's farm
+focus = { 
+id = PLC_drinsanosfarm
+icon = GFX_goal_generic_construction2
+x = 6
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_nurokamisfarm } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+198 = {
+add_building_construction = { 
+type = industrial_complex
+level = 1
+instant_build = yes }
+}
+198 = {
+add_extra_state_shared_building_slots = 1 }
+ } 
+
+ } 
+
+#Focus for SIRHC Research
+focus = { 
+id = PLC_sirhcresearch
+icon = GFX_focus_research2
+x = 3
+y = 2
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_developruthenia } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_timed_idea = { 
+idea = PLC_sirhc
+days = 300
+}
+ } 
+
+ } 
+
+#Focus for Ruthenian conscription
+focus = { 
+id = PLC_ruthenianconscription
+icon = GFX_ruthenianconscription
+x = 8
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_thecommonwealthof3nations } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_ideas = PLC_ruthenia
+ } 
+
+ } 
+
+#Focus for Resolve the army problem
+focus = { 
+id = PLC_resolvethearmyproblem
+icon = GFX_focus_secret_rearmament
+x = 13
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+army_experience= 10
+add_stability = 0.1
+ } 
+
+ } 
+
+#Focus for Hussars for the win!
+focus = { 
+id = PLC_hussarsforthewin
+icon = GFX_goal_generic_cavalry
+x = 11
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_resolvethearmyproblem } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_ideas = PLC_hussars
+ } 
+
+ } 
+
+#Focus for Train the soldiers
+focus = { 
+id = PLC_trainthesoldiers
+icon = GFX_focus_prc_infiltration
+x = 15
+y = 1
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_resolvethearmyproblem } 
+ai_will_do = { 
+ factor = 4000
+ } 
+available = { 
+surrender_progress > 0.05
+ } 
+completion_reward = { 
+remove_ideas = SOV_poor_training
+ } 
+
+ } 
+
+#Focus for Cavalry Carbines
+focus = { 
+id = PLC_cavalrycarbines
+icon = GFX_goal_generic_military_sphere
+x = 10
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_hussarsforthewin } 
+mutually_exclusive = { focus = PLC_sabers } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_ideas = SOV_carbines
+ } 
+
+ } 
+
+#Focus for Sabers!
+focus = { 
+id = PLC_sabers
+icon = GFX_focus_RAJ_lions_of_the_great_war
+x = 12
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_hussarsforthewin } 
+mutually_exclusive = { focus = PLC_cavalrycarbines } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = PLC_saber
+ } 
+
+ } 
+
+#Focus for War of attrition
+focus = { 
+id = PLC_warofattrition
+icon = GFX_focus_generic_support_the_left_right
+x = 15
+y = 2
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_trainthesoldiers } 
+ai_will_do = { 
+ factor = 4000
+ } 
+available = { 
+surrender_progress > 0.1
+ } 
+completion_reward = { 
+10 = {
+damage_building = { 
+type = infrastructure
+damage = 0.6 
+}
+}
+90 = {
+damage_building = { 
+type = infrastructure
+damage = 0.6 
+}
+}
+88 = {
+damage_building = { 
+type = infrastructure
+damage = 0.6 
+}
+}
+97 = {
+damage_building = { 
+type = infrastructure 
+damage = 0.6 
+}
+}
+ } 
+
+ } 
+
+#Focus for Steel helmet project
+focus = { 
+id = PLC_steelhelmetproject
+icon = GFX_goal_generic_allies_build_infantry
+x = 14
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_warofattrition } 
+ai_will_do = { 
+ factor = 4000
+ } 
+available = { 
+surrender_progress > 0.15
+ } 
+completion_reward = { 
+add_ideas = PLC_war
+ } 
+
+ } 
+
+#Focus for Faster horses
+focus = { 
+id = PLC_fasterhorses
+icon = GFX_focus_generic_military_academy
+x = 11
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_sabers focus = PLC_cavalrycarbines } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_ideas = PLC_horse
+ } 
+
+ } 
+
+#Focus for Resistance!
+focus = { 
+id = PLC_resistance
+icon = GFX_resistance
+x = 13
+y = 4
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_fasterhorses } 
+prerequisite = { focus = PLC_steelhelmetproject } 
+ai_will_do = { 
+ factor = 4000
+ } 
+available = { 
+surrender_progress > 0.3
+ } 
+completion_reward = { 
+add_timed_idea = { 
+idea = PLC_last_stand
+days = 200
+}
+ } 
+
+ } 
+
+#Focus for Fragile government
+focus = { 
+id = PLC_fragilegovernment
+icon = GFX_focus_generic_self_management
+x = 20
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_stability = 0.01
+ } 
+
+ } 
+
+#Focus for New members
+focus = { 
+id = PLC_newmembers
+icon = GFX_goal_generic_intelligence_exchange
+x = 20
+y = 1
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_fragilegovernment } 
+ai_will_do = { 
+ factor = 37
+ } 
+completion_reward = { 
+10 = {
+add_manpower = 10000
+}
+ } 
+
+ } 
+
+#Focus for Maintain English-Speaking King
+focus = { 
+id = PLC_maintainenglishspeakingking
+icon = GFX_focus_rom_royal_dictatorship
+x = 19
+y = 2
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_newmembers } 
+mutually_exclusive = { focus = PLC_givesejmmorepower } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_popularity = { 
+ideology = fascism 
+popularity = 0.1
+}
+ } 
+
+ } 
+
+#Focus for Give sejm more power
+focus = { 
+id = PLC_givesejmmorepower
+icon = GFX_goal_tfv_strengthen_commonwealth_ties
+x = 21
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_newmembers } 
+mutually_exclusive = { focus = PLC_maintainenglishspeakingking } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_popularity = { 
+ideology = democratic 
+popularity = 0.1 
+}
+ } 
+
+ } 
+
+#Focus for Assasinate Caden
+focus = { 
+id = PLC_assasinatecaden
+icon = GFX_focus_rom_abdicate
+x = 23
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_givesejmmorepower } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+news_event = europacraftalis.1
+ } 
+
+ } 
+
+#Focus for Caden's abdication
+focus = { 
+id = PLC_cadensabdication
+icon = GFX_cadensabdication
+x = 22
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_assasinatecaden focus = PLC_abolishthesejm } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+retire_country_leader = yes
+ } 
+
+ } 
+
+#Focus for Abolish the Sejm
+focus = { 
+id = PLC_abolishthesejm
+icon = GFX_focus_civilwar
+x = 20
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_maintainenglishspeakingking } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+start_civil_war = {
+ ideology = democratic 
+size = 0.4 
+}
+set_politics = {
+ ruling_party = fascism 
+elections_allowed = no 
+}
+add_popularity = { 
+ideology = fascism 
+popularity = 0.3
+}
+ } 
+
+ } 
+
+#Focus for Second Golden Age
+focus = { 
+id = PLC_secondgoldenage
+icon = GFX_goal_generic_demand_territory
+x = 23
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_cadensabdication } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_stability = 0.15
+ } 
+
+ } 
+
+#Focus for Greece independence
+focus = { 
+id = PLC_greeceindependence
+icon = GFX_goal_tfv_can_compromise_with_quebec
+x = 28
+y = 3
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_romanianindependence } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+OTE = {
+country_event = {
+days = 10
+id = europacraftalis.6
+}
+}
+ } 
+
+ } 
+
+#Focus for Non-Agression pact with Prussia
+focus = { 
+id = PLC_nonagressionpactwithprussia
+icon = GFX_focus_chi_mission_to_germany
+x = 18
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_maintainenglishspeakingking } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+PRG = {
+country_event = {
+days = 1
+id = europacraftalis.8
+}
+}
+ } 
+
+ } 
+
+#Focus for Demand Croatian independence
+focus = { 
+id = PLC_demandcroatianindependence
+icon = GFX_focus_YUG_banovina_of_croatia
+x = 21
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_cadensabdication } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+OTE = {
+country_event = {
+days = 1
+id = europacraftalis.25
+}
+}
+ASE = {
+country_event = {
+days = 1
+id = europacraftalis.7
+}
+}
+ } 
+
+ } 
+
+#Focus for Olkusz's line
+focus = { 
+id = PLC_olkuszsline
+icon = GFX_goal_generic_fortify_city
+x = 8
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_ruthenianconscription } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+85 = {
+add_building_construction = { 
+type = bunker 
+province = 3295 
+province = 6347
+level = 2 
+instant_build = yes }
+}
+98 = {
+add_building_construction = { 
+type = bunker 
+province = 9290
+province = 9316
+level = 2 
+instant_build = yes }
+}
+97 = {
+add_building_construction = { 
+type = bunker 
+province = 11329
+province = 11357
+level = 2 
+instant_build = yes }
+}
+ } 
+
+ } 
+
+#Focus for Sell Danzig
+focus = { 
+id = PLC_selldanzig
+icon = GFX_focus_generic_treaty
+x = 17
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_nonagressionpactwithprussia } 
+ai_will_do = { 
+ factor = 4000
+ } 
+completion_reward = { 
+PRG = { set_state_owner = 85 }
+PRG = { set_state_controller = 85 }
+PRG = { add_state_core = 85 }
+add_opinion_modifier = {
+target = PRG
+modifier = huge_increase
+}
+ } 
+
+ } 
+
+#Focus for Payback for Smolensk War
+focus = { 
+id = PLC_paybackforsmolenskwar
+icon = GFX_focus_ger_strike_at_the_source
+x = 28
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_greeceindependence } 
+ai_will_do = { 
+ factor = 40
+ } 
+available = { 
+SOV = { exists = yes }
+NOT = { has_war = yes }
+ } 
+completion_reward = { 
+add_timed_idea = { 
+idea = PLC_payback
+days = 50
+}
+create_wargoal = {
+type = annex_everything
+target = SOV
+}
+ } 
+
+ } 
+
+#Focus for Polish Trading Company
+focus = { 
+id = PLC_polishtradingcompany
+icon = GFX_goal_generic_consumer_goods
+x = 0
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_sosnowiec } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+88 = {
+add_building_construction = { 
+type = industrial_complex
+level = 2 
+instant_build = yes }
+}
+88 = {
+add_extra_state_shared_building_slots = 2
+}
+add_ideas = PLC_janik
+ } 
+
+ } 
+
+#Focus for Defence of Poznan
+focus = { 
+id = PLC_defenceofpoznan
+icon = GFX_goal_generic_defence
+x = 13
+y = 1
+cost = 1
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_resolvethearmyproblem } 
+ai_will_do = { 
+ factor = 40
+ } 
+available = { 
+surrender_progress > 0
+ } 
+completion_reward = { 
+86 = {
+add_building_construction = { 
+type = bunker 
+province = 6558 
+level = 8 
+instant_build = yes }
+}
+ } 
+
+ } 
+
+#Focus for Russian-PLC alliance
+focus = { 
+id = PLC_russianplcalliance
+icon = GFX_russianplcalliance
+x = 17
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_selldanzig } 
+ai_will_do = { 
+ factor = 40
+ } 
+available = { 
+SOV = { exists = yes }
+ } 
+completion_reward = { 
+SOV = {
+country_event = {
+days = 1
+id = europacraftalis.45
+}
+}
+ } 
+
+ } 
+
+#Focus for Fort Stockton
+focus = { 
+id = PLC_fortstockton
+icon = GFX_goal_generic_construct_military
+x = 3
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_constructionofkielce } 
+ai_will_do = { 
+ factor = 40
+ } 
+available = { 
+189 = { is_controlled_by = PLC }
+ } 
+completion_reward = { 
+189 = {
+add_building_construction = { 
+type = bunker 
+province = 6314 
+level = 2 
+instant_build = yes }
+}
+ } 
+
+ } 
+
+#Focus for Rebuild the nation
+focus = { 
+id = PLC_rebuildthenation
+icon = GFX_rebuildthenation
+x = 22
+y = 6
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_demandcroatianindependence focus = PLC_secondgoldenage } 
+ai_will_do = { 
+ factor = 40
+ } 
+available = { 
+NOT = { has_war = yes }
+date > 1939.1.1
+ } 
+completion_reward = { 
+add_timed_idea = { 
+idea = PLC_rebuild
+days = 150
+}
+ } 
+
+ } 
+
+#Focus for Prussian-PLC War
+focus = { 
+id = PLC_prussianplcwar
+icon = GFX_focus_generic_military_mission
+x = 24
+y = 0
+cost = 5
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 4000
+ } 
+available = { 
+PLC = {
+has_war_with = PRG
+}
+ } 
+completion_reward = { 
+PLC = {
+country_event = {
+days = 1
+id = PLC.1
+}
+}
+ } 
+
+ } 
+
+#Focus for Lithuanian Forces
+focus = { 
+id = PLC_lithuanianforces
+icon = GFX_lithuanianforces
+x = 24
+y = 1
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_prussianplcwar } 
+ai_will_do = { 
+ factor = 4000
+ } 
+completion_reward = { 
+PLC = {
+country_event = {
+days = 1
+id = PLC.2
+}
+}
+ } 
+
+ } 
+
+#Focus for Summer Defensive of 1938
+focus = { 
+id = PLC_summerdefensiveof1938
+icon = GFX_summerdefensiveof1938
+x = 25
+y = 2
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_lithuanianforces } 
+ai_will_do = { 
+ factor = 4000
+ } 
+available = { 
+date > 1938.5.22
+date < 1938.9.22
+ } 
+completion_reward = { 
+PLC = {
+country_event = {
+days = 1
+id = PLC.3
+}
+}
+news_event = europacraftalis.43
+ } 
+
+ } 
+
+#Focus for Prepare for another war
+focus = { 
+id = PLC_prepareforanotherwar
+icon = GFX_prepareforanotherwar
+x = 20
+y = 7
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_rebuildthenation } 
+ai_will_do = { 
+ factor = 40
+ } 
+available = { 
+NOT = { has_war = yes }
+ } 
+completion_reward = { 
+add_timed_idea = { 
+idea = PLC_build_war
+days = 365
+}
+ } 
+
+ } 
+
+#Focus for Seven years war
+focus = { 
+id = PLC_sevenyearswar
+icon = GFX_focus_ger_break_anglo_french_colonial_hegemony
+x = 24
+y = 7
+cost = 1
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_rebuildthenation } 
+ai_will_do = { 
+ factor = 40
+ } 
+available = { 
+ENG = {
+has_war_with = FRA
+}
+date > 1938.1.1
+ } 
+completion_reward = {
+add_stability = 0.05
+ } 
+
+ } 
+
+#Focus for Join the English
+focus = { 
+id = PLC_jointheenglish
+icon = GFX_focus_chi_british_cooperation
+x = 23
+y = 8
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_sevenyearswar } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+ENG = {
+has_war_with = FRA
+}
+ } 
+completion_reward = { 
+ENG = {
+country_event = {
+days = 1
+id = europacraftalis.44
+}
+}
+ } 
+
+ } 
+
+#Focus for Join the French
+focus = { 
+id = PLC_jointhefrench
+icon = GFX_focus_chi_reach_out_to_france
+x = 25
+y = 8
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_sevenyearswar } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+FRA = {
+has_war_with = ENG
+}
+ } 
+completion_reward = { 
+FRA = {
+country_event = {
+days = 1
+id = europacraftalis.44
+}
+}
+ } 
+
+ } 
+
+#Focus for Build Warsaw fortifications
+focus = { 
+id = PLC_buildwarsawfortifications
+icon = GFX_buildwarsawfortifications
+x = 20
+y = 8
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_prepareforanotherwar } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+10 = {
+add_building_construction = {
+type = bunker
+province = 11492
+level = 3
+instant_build = yes
+}
+add_building_construction = {
+type = bunker
+province = 9400
+level = 3
+instant_build = yes
+}
+add_building_construction = {
+type = bunker
+province = 467
+level = 3
+instant_build = yes
+}
+add_building_construction = {
+type = bunker
+province = 6511
+level = 3
+instant_build = yes
+}
+add_building_construction = {
+type = bunker
+province = 3544
+level = 10
+instant_build = yes
+}
+}
+98 = {
+add_building_construction = {
+type = bunker
+province = 6259
+level = 3
+instant_build = yes
+}
+add_building_construction = {
+type = bunker
+province = 6567
+level = 3
+instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Settle New Lands
+focus = { 
+id = PLC_settlenewlands
+icon = GFX_settlenewlands
+x = 19
+y = 9
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_buildwarsawfortifications } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_stability = 0.05
+add_ideas = PLC_settle
+ } 
+
+ } 
+
+#Focus for Rewards for help
+focus = { 
+id = PLC_rewardsforhelp
+icon = GFX_rewardsforhelp
+x = 24
+y = 9
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_jointheenglish focus = PLC_jointhefrench } 
+ai_will_do = { 
+ factor = 40
+ } 
+completion_reward = { 
+add_timed_idea = { 
+idea = PLC_reward
+days = 50 
+}
+ } 
+
+ } 
+
+#Focus for Army training
+focus = { 
+id = PLC_armytraining
+icon = GFX_armytraining
+x = 13
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PLC_resistance } 
+ai_will_do = { 
+ factor = 4000
+ } 
+completion_reward = { 
+add_timed_idea = { 
+idea = PLC_training
+days = 365
+}
+ } 
+
+ } 
+
+#End of focuses 
+ }

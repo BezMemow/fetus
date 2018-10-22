@@ -1,0 +1,65 @@
+"Prussian war" = {
+
+#Decision for: Winter Defensive
+winterdefensive = {
+icon = decision_generic_civil_support
+available = {
+PLC = { has_war_with = PRG }
+or = { AND = { date > 1937.11.29 date < 1938.01.20 } AND = { date > 1938.11.29 date < 1939.01.20} AND = { date > 1939.11.29 date < 1940.01.20} AND = { date > 1940.11.29 date < 1941.01.20 } AND = { date > 1941.11.29 date < 1942.01.20} }
+}
+visible = {
+PLC = { has_war_with = PRG }
+or = { AND = { date > 1937.11.29 date < 1938.01.20 } AND = { date > 1938.11.29 date < 1939.01.20} AND = { date > 1939.11.29 date < 1940.01.20} AND = { date > 1940.11.29 date < 1941.01.20 } AND = { date > 1941.11.29 date < 1942.01.20} }
+}
+complete_effect = {
+add_timed_idea = { 
+idea = plc_winterdefensive
+days = 90
+}
+hidden_effect = {
+random_owned_controlled_state = {
+		prioritize = { 10 }
+		create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+		owner = PLC
+		}
+				
+				create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+		owner = PLC
+		}
+
+		create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+		owner = PLC
+		}
+
+}
+random_owned_controlled_state = {
+		prioritize = { 92 }
+		create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+		owner = PLC
+		}
+
+		create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+		owner = PLC
+		}
+
+		create_unit = { 
+				division = "name = \"Dywizja Piechoty\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.0" 
+		owner = PLC
+		}
+}
+}
+
+news_event = europacraftalis.36
+}
+days_remove = -1
+ai_will_do = {
+4000
+}
+}
+
+}
