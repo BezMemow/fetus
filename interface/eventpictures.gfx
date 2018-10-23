@@ -1933,6 +1933,16 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/news_event_british_troops_marching.dds"
 	}
 	
+	spriteType = {
+		name = "news_event_summeroffensive"
+		texturefile = "gfx/event_pictures/news_event_summeroffensive.tga"
+	}
+	
+	spriteType = {
+		name = "event_inf"
+		texturefile = "gfx/event_pictures/event_inf.tga"
+	}
+	
 }
 	
 	

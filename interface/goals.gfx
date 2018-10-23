@@ -1354,5 +1354,25 @@ spriteTypes = {
 		name = "GFX_armytraining" 
 		texturefile = "gfx/interface/goals/infantry_supremacy.dds" 
 	}
+	
+	SpriteType = { 
+		name = "GFX_germanefficiency" 
+		texturefile = "gfx/interface/goals/invite_german_experts.dds" 
+	}
+	
+	SpriteType = { 
+		name = "GFX_germandream" 
+		texturefile = "gfx/interface/goals/generic_german_dream.dds" 
+	}
+	
+	SpriteType = { 
+		name = "GFX_polishprussianwar" 
+		texturefile = "gfx/interface/goals/GER_renewed_militarism.dds" 
+	}
+	
+	SpriteType = { 
+		name = "GFX_silesiaexploitation" 
+		texturefile = "gfx/interface/goals/gather_workers.dds" 
+	}
 
 }

@@ -21,7 +21,7 @@ ai_will_do = {
  factor = 40
  } 
 available = { 
-date > 1941.1.1
+date > 1705.1.1
  } 
 completion_reward = { 
 add_timed_idea = { 
@@ -112,7 +112,7 @@ bypass = {
 NOT = { DEN = { exists = yes } }
  } 
 available = { 
-date > 1938.1.1
+date > 1702.1.1
  } 
 completion_reward = { 
 create_wargoal = {
@@ -145,7 +145,7 @@ completion_reward = {
 PAP = {
 country_event = {
 days = 1
-id = europacraftalis.43
+id = europacraftalis.47
 }
 }
  } 
@@ -190,7 +190,7 @@ ai_will_do = {
  } 
 available = { 
 GER = { exists = yes }
-date > 1940.1.1
+date > 1704.1.1
  } 
 completion_reward = { 
 FRA = {
@@ -285,7 +285,7 @@ ai_will_do = {
  factor = 4000
  } 
 available = { 
-date > 1939.1.1
+date > 1703.1.1
  } 
 completion_reward = { 
 create_wargoal = { 
@@ -416,7 +416,7 @@ ai_will_do = {
  factor = 40
  } 
 available = { 
-date > 1938.5.1
+date > 1702.5.1
  } 
 completion_reward = { 
 IRQ = {
@@ -431,7 +431,7 @@ days = 1
 id = americas.1
 }
 }
-} 
+ } 
 
  } 
 
@@ -447,7 +447,7 @@ ai_will_do = {
  factor = 40
  } 
 available = { 
-date > 1938.1.1
+date > 1702.1.1
  } 
 completion_reward = { 
 126 = {
@@ -507,7 +507,7 @@ available = {
 ENG = {
 has_war_with = FRA
 }
-date > 1939.1.1
+date > 1703.1.1
  } 
 completion_reward = { 
 add_timed_idea = { 

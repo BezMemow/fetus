@@ -1,0 +1,118 @@
+"Polish war" = {
+	#Decision for: Summer offensive
+	summeroffensive = {
+	icon = decision_generic_scorched_earth
+	available = {
+	PLC = { has_war_with = PRG }
+	or = { AND = { date > 1701.05.22 date < 1701.09.20 } AND = { date > 1702.05.22 date < 1702.09.20 } AND = { date > 1703.05.22 date < 1703.09.20} AND = { date > 1704.05.22 date < 1704.09.20} AND = { date > 1705.05.22 date < 1705.09.20 } AND = { date > 1706.05.22 date < 1706.09.20} }
+	}
+	visible = {
+	PLC = { has_war_with = PRG }
+	or = { AND = { date > 1701.05.22 date < 1701.09.20 } AND = { date > 1702.05.22 date < 1702.09.20 } AND = { date > 1703.05.22 date < 1703.09.20} AND = { date > 1704.05.22 date < 1704.09.20} AND = { date > 1705.05.22 date < 1705.09.20 } AND = { date > 1706.05.22 date < 1706.09.20} }
+	}
+	complete_effect = {
+	add_timed_idea = { 
+	idea = prg_summeroffensive
+	days = 120
+	}
+	hidden_effect = {
+	random_owned_controlled_state = {
+		prioritize = { 63 }
+		create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.0" 
+		owner = PRG
+		}
+				
+		create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.0" 
+		owner = PRG
+		}
+
+		create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.0" 
+		owner = PRG
+		}
+		
+		create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.0" 
+		owner = PRG
+		}
+		
+		create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.0" 
+		owner = PRG
+		}
+		
+		create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.0" 
+		owner = PRG
+		}
+		
+		create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.0" 
+		owner = PRG
+		}
+		
+		create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.0" 
+		owner = PRG
+		}
+		
+		create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.0" 
+		owner = PRG
+		}
+
+	}
+	random_owned_controlled_state = {
+		prioritize = { 68 }
+		create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.0" 
+		owner = PRG
+		}
+
+		create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.0" 
+		owner = PRG
+		}
+
+		create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.0" 
+		owner = PRG
+		}
+		
+		create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.0" 
+		owner = PRG
+		}
+		
+		create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.0" 
+		owner = PRG
+		}
+		
+		create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.0" 
+		owner = PRG
+		}
+		
+		create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.0" 
+		owner = PRG
+		}
+		
+		create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.0" 
+		owner = PRG
+		}
+	}
+	}
+	news_event = europacraftalis.46
+	}
+	days_re_enable = 365
+	days_remove = 1
+	ai_will_do = {
+	4000
+	}
+}
+}

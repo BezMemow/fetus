@@ -1,0 +1,22 @@
+ai_historical_focus_list_PRG = {
+	ai_national_focuses = {
+		PRG_industrialeffort
+		PRG_civilianfocus
+		PRG_improverailwaynetwork
+		PRG_civilianmilitaryjointinvestment
+		PRG_exploitationsofironmines
+		PRG_armyexpansion
+		PRG_increasedconscription
+		PRG_furtherresearchofinfantryweapons
+		PRG_landdoctrineadvancments
+		PRG_prussiandiscipline
+		PRG_politicalsphere
+		PRG_strongprussianpolitics
+		PRG_absolutemonarchy
+		PRG_preparetofightwithpoland
+		PRG_kriegserklrunganpolenlitauen
+		PRG_prussianglory
+		PRG_militaryaccademy	
+		PRG_greatinfantry
+	}
+}

@@ -571,6 +571,7 @@ ideas = {
 				army_core_defence_factor = 1
 				land_reinforce_rate = 0.3
 				winter_attrition_factor = -1
+				acclimatization_cold_climate_gain_factor = 0.5
 			}
 		}
 		
@@ -661,6 +662,44 @@ ideas = {
 			
 			modifier = {
 				consumer_goods_factor = -0.05
+			}
+		}
+		
+		PRG_summeroffensive = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = idea_summeroffensive
+			
+			modifier = {
+				army_attack_factor = 0.3
+				land_reinforce_rate = 0.1
+				heat_attrition_factor = -0.1
+			}
+		}
+		
+		PLC_construction2 = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_production_bonus
+			
+			modifier = {
+				production_speed_buildings_factor = 0.10
 			}
 		}
 	

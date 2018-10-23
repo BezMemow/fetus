@@ -2594,6 +2594,10 @@
  PLC_rebuild_desc:0 "We need to rebuild the nation after this brutal war..."
  PLC_training:0 "Extensive training"
  PLC_training_desc:0 "We need to train more to increase the size of our polish army!"
+ PRG_summeroffensive:0 "Summer Offensive"
+ PRG_summeroffensive_desc:0 "We need to destroy the Polish before they get too strong!"
+ PLC_construction2:0 "Urbanise Poland"
+ PLC_construction2_desc:0 "Poland needs to urbanise!"
 ##################
 
 

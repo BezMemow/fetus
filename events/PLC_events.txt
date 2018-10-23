@@ -74,7 +74,7 @@ country_event = {
 	}
 }
 
-##Event: Summer Defensive of 1938
+##Event: Summer Defensive of 1702
 country_event = {
  id = PLC.3
  title = PLC.3.title

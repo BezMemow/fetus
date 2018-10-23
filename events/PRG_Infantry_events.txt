@@ -1,0 +1,95 @@
+add_namespace = inf
+
+country_event = {
+ id = inf.1
+ title = inf.1.title
+ desc = inf.1.desc
+ picture = event_inf
+ fire_only_once = yes
+ major = yes
+ mean_time_to_happen = { days = 100 }
+ trigger = {
+ date > 1700.1.1
+ NOT = { has_global_flag = PRG_inf1 }
+ }
+ immediate = {
+ set_global_flag = PRG_inf1
+ }
+	option = {
+		name = inf.1.a
+		ai_chance = { factor = 40}
+		hidden_effect = {
+		random_owned_controlled_state = {
+		prioritize { 64 }
+				create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.5" 
+		owner = PRG
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.5" 
+		owner = PRG
+		}
+		}
+		random_owned_controlled_state = {
+		prioritize { 62 }
+				create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.5" 
+		owner = PRG
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.5" 
+		owner = PRG
+		}
+		}
+		}
+	}
+}
+
+country_event = {
+ id = inf.2
+ title = inf.2.title
+ desc = inf.2.desc
+ picture = event_inf
+ fire_only_once = yes
+ major = yes
+ mean_time_to_happen = { days = 100 }
+ trigger = {
+ date > 1701.1.1
+ NOT = { has_global_flag = PRG_inf2 }
+ }
+ immediate = {
+ set_global_flag = PRG_inf2
+ }
+	option = {
+		name = inf.2.a
+		ai_chance = { factor = 40}
+		hidden_effect = {
+		random_owned_controlled_state = {
+		prioritize { 68 }
+				create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.5" 
+		owner = PRG
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.5" 
+		owner = PRG
+		}
+		}
+		random_owned_controlled_state = {
+		prioritize { 5 }
+				create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.5" 
+		owner = PRG
+		}
+				
+				create_unit = { 
+				division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 0.5" 
+		owner = PRG
+		}
+		}
+		}
+	}
+}

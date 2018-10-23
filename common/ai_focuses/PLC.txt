@@ -1,0 +1,38 @@
+ai_historical_focus_list_PLC = {
+	ai_national_focuses = {
+		PLC_szlachtaindustrialprogram
+		PLC_buildliepaja
+		PLC_developruthenia
+		PLC_sirhcresearch
+		PLC_sosnowiec
+		PLC_bobrownica
+		PLC_polishtradingcompany
+		PLC_militarydevelopement
+		PLC_constructionofkielce
+		PLC_fortstockton
+		PLC_fragilegovernment
+		PLC_newmembers
+		PLC_givesejmmorepower
+		PLC_assasinatecaden
+		PLC_cadensabdication
+		PLC_resolvethearmyproblem
+		PLC_defenceofpoznan
+		PLC_prussianplcwar
+		PLC_lithuanianforces
+		PLC_summerdefensiveof1702
+		PLC_trainthesoldiers
+		PLC_warofattrition
+		PLC_steelhelmetproject
+		PLC_hussarsforthewin
+		PLC_sabers
+		PLC_fasterhorses
+		PLC_resistance
+		PLC_ottomanquestion
+		PLC_alliancewithaustriahungary
+		PLC_armytraining
+		PLC_rebuildthenation
+		PLC_prepareforanotherwar
+		PLC_buildwarsawfortifications
+		PLC_Settlenewlands
+	}
+}

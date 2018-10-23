@@ -3797,4 +3797,9 @@ spriteTypes = {
 		name = "GFX_idea_PLC_reward"
 		texturefile = "gfx/interface/ideas/idea_generic_foreign_capital.dds"
 	}
+	
+	spriteType = {
+		name = "GFX_idea_PRG_summeroffensive"
+		texturefile = "gfx/interface/ideas/idea_summeroffensive.dds"
+	}
 }

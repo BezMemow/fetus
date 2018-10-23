@@ -5,12 +5,13 @@ winterdefensive = {
 icon = decision_generic_civil_support
 available = {
 PLC = { has_war_with = PRG }
-or = { AND = { date > 1937.11.29 date < 1938.01.20 } AND = { date > 1938.11.29 date < 1939.01.20} AND = { date > 1939.11.29 date < 1940.01.20} AND = { date > 1940.11.29 date < 1941.01.20 } AND = { date > 1941.11.29 date < 1942.01.20} }
+or = { AND = { date > 1702.11.29 date < 1703.01.20 } AND = { date > 1703.11.29 date < 1704.01.20} AND = { date > 1704.11.29 date < 1705.01.20} AND = { date > 1705.11.29 date < 1706.01.20 } AND = { date > 1706.11.29 date < 1706.01.20} }
 }
 visible = {
 PLC = { has_war_with = PRG }
-or = { AND = { date > 1937.11.29 date < 1938.01.20 } AND = { date > 1938.11.29 date < 1939.01.20} AND = { date > 1939.11.29 date < 1940.01.20} AND = { date > 1940.11.29 date < 1941.01.20 } AND = { date > 1941.11.29 date < 1942.01.20} }
+or = { AND = { date > 1702.11.29 date < 1703.01.20 } AND = { date > 1703.11.29 date < 1704.01.20} AND = { date > 1704.11.29 date < 1705.01.20} AND = { date > 1705.11.29 date < 1706.01.20 } AND = { date > 1706.11.29 date < 1706.01.20} }
 }
+days_re_enable = 365
 complete_effect = {
 add_timed_idea = { 
 idea = plc_winterdefensive

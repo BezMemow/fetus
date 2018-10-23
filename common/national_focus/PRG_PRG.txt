@@ -7,11 +7,43 @@ add = 10
 tag = PRG 
 } 
 } 
+#Focus for Silesia exploitation
+focus = { 
+id = PRG_silesiaexploitation
+icon = GFX_silesiaexploitation
+x = 2
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_furtherimprovingrailwaynetwork } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+PRG = { owns_state = 66
+owns_state = 67
+}
+ } 
+completion_reward = { 
+add_resource= { 
+type = oil 
+amount = 20
+state = 66
+}
+add_resource= { 
+type = oil 
+amount = 8 
+state = 67 
+}
+ } 
+
+ } 
+
 #Focus for Limit free speech
 focus = { 
 id = PRG_limitfreespeech
 icon = GFX_goal_generic_propaganda
-x = 16
+x = 19
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -41,7 +73,7 @@ popularity = 0.1
 focus = { 
 id = PRG_purgethemonarchistfaction
 icon = GFX_focus_generic_anti_fascist_diplomacy
-x = 20
+x = 23
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -88,6 +120,10 @@ ai_will_do = {
 bypass = { 
 NOT = { ASE = { exists = yes } }
  } 
+available = { 
+NOT = { has_war = yes }
+has_army_manpower = { size > 900000 }
+ } 
 completion_reward = { 
 ASE = {
 country_event = {
@@ -125,11 +161,65 @@ id = europacraftalis.23
 
  } 
 
+#Focus for German Dream
+focus = { 
+id = PRG_germandream
+icon = GFX_germandream
+x = 13
+y = 8
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_issuepartitionlettertopoland focus = PRG_issuepartitionlettertopoland } 
+ai_will_do = { 
+ factor = 4000
+ } 
+completion_reward = { 
+create_wargoal = { 
+type = annex_everything 
+target = SAX
+}
+create_wargoal = { 
+type = annex_everything 
+target = HRE
+}
+create_wargoal = { 
+type = annex_everything 
+target = BAV
+}
+ } 
+
+ } 
+
+#Focus for Polish-Prussian War
+focus = { 
+id = PRG_polishprussianwar
+icon = GFX_polishprussianwar
+x = 11
+y = 5
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_kriegserklrunganpolenlitauen focus = PRG_demanddanzig } 
+ai_will_do = { 
+ factor = 4000
+ } 
+available = { 
+date > 1702.5.22
+date < 1702.9.22
+ } 
+completion_reward = { 
+add_timed_idea = {
+days = 365
+idea = PRG_summeroffensive
+}
+ } 
+
+ } 
+
 #Focus for New Constitution
 focus = { 
 id = PRG_newconstitution
 icon = GFX_goal_generic_forceful_treaty
-x = 16
+x = 19
 y = 6
 cost = 10
 available_if_capitulated = yes 
@@ -206,7 +296,7 @@ add_war_support = 0.2
 focus = { 
 id = PRG_keepmonarchinhousearrest
 icon = GFX_focus_rom_handle_king
-x = 25
+x = 28
 y = 5
 cost = 5
 available_if_capitulated = yes 
@@ -225,7 +315,7 @@ add_war_support = 0.05
 focus = { 
 id = PRG_peoplesindustry
 icon = GFX_goal_generic_soviet_construction
-x = 21
+x = 24
 y = 5
 cost = 10
 available_if_capitulated = yes 
@@ -254,7 +344,7 @@ add_extra_state_shared_building_slots = 8 }
 focus = { 
 id = PRG_worldwiderevolution
 icon = GFX_focus_chi_cooperation_with_the_communists
-x = 23
+x = 26
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -345,12 +435,15 @@ y = 4
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = PRG_preparetofightwithpoland } 
-will_lead_to_war_with = PLC
+mutually_exclusive = { focus = PRG_kriegserklrunganpolenlitauen } 
 ai_will_do = { 
  factor = 40
  } 
 bypass = { 
 PRG = { owns_state = 85 }
+ } 
+available = { 
+has_army_manpower { size > 700000 }
  } 
 completion_reward = { 
 PLC = {
@@ -372,8 +465,7 @@ y = 4
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = PRG_preparetofightwithpoland } 
-mutually_exclusive = { focus = PRG_demanddanzig }
-will_lead_to_war_with = PLC 
+mutually_exclusive = { focus = PRG_demanddanzig } 
 ai_will_do = { 
  factor = 40
  } 
@@ -382,6 +474,7 @@ has_war_with = PLC
  } 
 available = { 
 PLC = { exists = yes }
+has_army_manpower = { size > 700000 }
  } 
 completion_reward = { 
 create_wargoal = { 
@@ -396,7 +489,7 @@ target = PLC
 focus = { 
 id = PRG_dealwithpoliticalenemies
 icon = GFX_focus_CZE_german_puppet
-x = 18
+x = 21
 y = 5
 cost = 10
 available_if_capitulated = yes 
@@ -418,7 +511,7 @@ add_stability = -0.15
 focus = { 
 id = PRG_spreadthewordofsalvation
 icon = GFX_focus_generic_soviet_politics
-x = 22
+x = 25
 y = 6
 cost = 10
 available_if_capitulated = yes 
@@ -484,7 +577,7 @@ add_extra_state_shared_building_slots = 2
 focus = { 
 id = PRG_politicalamnesty
 icon = GFX_goal_generic_dangerous_deal
-x = 23
+x = 26
 y = 5
 cost = 5
 available_if_capitulated = yes 
@@ -502,7 +595,7 @@ add_stability = 0.10
 focus = { 
 id = PRG_peoplesscience
 icon = GFX_focus_generic_socialist_science
-x = 24
+x = 27
 y = 6
 cost = 5
 available_if_capitulated = yes 
@@ -526,12 +619,12 @@ y = 6
 cost = 5
 available_if_capitulated = yes 
 prerequisite = { focus = PRG_silesianconquest } 
-will_lead_to_war_with = PLC
 ai_will_do = { 
  factor = 40
  } 
 bypass = { 
 89 = { is_owned_by = PRG }
+has_war_with = PLC
  } 
 completion_reward = { 
 PLC = {
@@ -588,7 +681,7 @@ add_ideas = SOV_international_rec
 focus = { 
 id = PRG_invadedanzig
 icon = GFX_focus_generic_provoke_border_clashes
-x = 18
+x = 21
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -674,7 +767,7 @@ add_war_support = -0.2
 focus = { 
 id = PRG_aggresiveforeignpolitics
 icon = GFX_focus_ger_great_red_menace
-x = 18
+x = 21
 y = 6
 cost = 10
 available_if_capitulated = yes 
@@ -694,7 +787,7 @@ add_state_claim = 85
 focus = { 
 id = PRG_peoplescongress
 icon = GFX_focus_prc_agrarian_socialism
-x = 21
+x = 23
 y = 3
 cost = 10
 available_if_capitulated = yes 
@@ -712,7 +805,7 @@ add_ideas = PRG_communism
 focus = { 
 id = PRG_dealwithimprisonedmonarch
 icon = GFX_focus_hun_assassinate_horthy
-x = 20
+x = 23
 y = 6
 cost = 5
 available_if_capitulated = yes 
@@ -911,7 +1004,7 @@ cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = PRG_furtherresearchofinfantryweapons } 
 mutually_exclusive = { focus = PRG_prussiandiscipline } 
-mutually_exclusive = { focus = PRG_newofficersexpandedtraining }  
+mutually_exclusive = { focus = PRG_newofficersexpandedtraining } 
 ai_will_do = { 
  factor = 1
  } 
@@ -1050,12 +1143,11 @@ add_extra_state_shared_building_slots = 2
 focus = { 
 id = PRG_dictatorseizescontrol
 icon = GFX_focus_smiling_buddha
-x = 20
+x = 22
 y = 4
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = PRG_peoplescongress } 
-mutually_exclusive = { focus = PRG_governmentforthepeople } 
 mutually_exclusive = { focus = PRG_governmentforthepeople } 
 ai_will_do = { 
  factor = 1
@@ -1118,13 +1210,13 @@ completion_reward = {
 62 = {
 add_building_construction = { 
 type = arms_factory 
-level = 1 
+level = 4 
 instant_build = yes }
 }
 63 = {
 add_building_construction = { 
 type = arms_factory 
-level = 2 
+level = 5 
 instant_build = yes }
 }
 62 = {
@@ -1144,8 +1236,6 @@ y = 1
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = PRG_industrialeffort } 
-mutually_exclusive = { focus = PRG_civilianfocus } 
-mutually_exclusive = { focus = PRG_civilianfocus } 
 mutually_exclusive = { focus = PRG_civilianfocus } 
 ai_will_do = { 
  factor = 40
@@ -1195,23 +1285,19 @@ cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = PRG_industrialeffort } 
 mutually_exclusive = { focus = PRG_militarycomplex } 
-mutually_exclusive = { focus = PRG_militarycomplex } 
-mutually_exclusive = { focus = PRG_militarycomplex } 
-mutually_exclusive = { focus = PRG_militarycomplex } 
-mutually_exclusive = { focus = PRG_militarycomplex } 
 ai_will_do = { 
  factor = 40
  } 
 completion_reward = { 
 62 = {
 add_building_construction = { 
-type = arms_factory 
+type = industrial_complex
 level = 1 
 instant_build = yes }
 }
 63 = {
 add_building_construction = { 
-type = arms_factory 
+type = industrial_complex 
 level = 2 
 instant_build = yes }
 }
@@ -1227,7 +1313,7 @@ add_extra_state_shared_building_slots = 2 }
 focus = { 
 id = PRG_governmentforthepeople
 icon = GFX_focus_generic_join_comintern
-x = 23
+x = 25
 y = 4
 cost = 10
 available_if_capitulated = yes 
@@ -1476,7 +1562,7 @@ id = europacraftalis.26
 focus = { 
 id = PRG_northerngermanyinterest
 icon = GFX_goal_generic_war_with_comintern
-x = 18
+x = 21
 y = 8
 cost = 10
 available_if_capitulated = yes 
@@ -1505,9 +1591,12 @@ prerequisite = { focus = PRG_educationalreforms }
 ai_will_do = { 
  factor = 1
  } 
+available = { 
+has_army_manpower { size > 1000000 }
+} 
 completion_reward = { 
 create_faction= "German Union"
- } 
+} 
 
  } 
 
@@ -1583,6 +1672,27 @@ prerequisite = { focus = PRG_fairconstitution }
 prerequisite = { focus = PRG_landforalliance } 
 ai_will_do = { 
  factor = 1
+ } 
+
+ } 
+
+#Focus for German efficiency
+focus = { 
+id = PRG_germanefficiency
+icon = GFX_germanefficiency
+x = 13
+y = 9
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = PRG_germandream } 
+ai_will_do = { 
+ factor = 40
+ } 
+available = { 
+tag = GER
+ } 
+completion_reward = { 
+add_idea = PRG_efficiency
  } 
 
  } 
