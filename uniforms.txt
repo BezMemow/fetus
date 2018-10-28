@@ -1,0 +1,43 @@
+# All infantry equipment
+
+equipments = {
+
+	uniform_base = {
+		year = 1700
+	
+		is_archetype = yes
+		picture = archetype_infantry_equipment		
+		is_buildable = no
+		type = infantry
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		#Misc Abilities
+		reliability = 1.0
+		maximum_speed = 4
+
+		#Defensive Abilities
+		defense = 1.5
+
+		#Offensive Abilities
+		soft_attack = 1.5
+
+		#Space taken in convoy
+		lend_lease_cost = 1
+		
+		build_cost_ic = 0.4
+		resources = {
+			steel = 1
+		}
+		
+	}
+
+	basic_uniforms = {
+		year = 1700
+	
+		archetype = uniform_base
+		priority = 03
+		visual_level = 0
+	}
+}
